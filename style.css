@@ -1,0 +1,27 @@
+body {
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+	background-color: black;
+	color: white;
+}
+.navbar {
+	font-family: 'Zilla Slab', serif;
+	font-size: 16pt;
+	padding: 2px;
+}
+.navbar ul {
+	list-style: none;
+	padding: 0 20px;
+}
+
+.navbar li {
+	display: inline-block;
+}
+
+.navbar li::after {
+	content: ' |'
+}
+
+.content {
+	display: block;
+	margin-left: 0;
+}

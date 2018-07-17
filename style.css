@@ -3,6 +3,7 @@ body {
 	background-color: black;
 	color: white;
 }
+/*** NAV ***/
 .navbar {
 	font-family: 'Zilla Slab', serif;
 	font-size: 16pt;
@@ -14,13 +15,41 @@ body {
 }
 
 .navbar li {
-	display: inline-block;
+	display: block;
+  float: left;
+  position: relative;
 }
 
 .navbar li::after {
-	content: ' |'
+	content: ' | '
 }
 
+/*** LANGUAGE DROPDOWN ***/
+.dropdown ul {
+  visibility: hidden;
+  background-color: white;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 0;
+  left: 0;
+  display: none;
+}
+
+.dropdown li {
+  clear: both;
+  width: 100%;
+}
+
+.dropdown li:after {
+  content: none;
+}
+
+.navbar ul li:hover > ul, ul li ul:hover {
+  display: block;
+  visibility: visible;
+}
+
+/*** CONTENT ***/
 .content {
 	display: block;
 	margin-left: 0;

@@ -38,30 +38,33 @@ header {
 
 .navbar li:hover {
 	background-color: #F5D580;
-	transition: ease-in-out .25s;
+	transition: ease .25s;
 }
 
 .dropdown ul {
 	margin: 0;
-	display: none;
+	display: block;
+	position: absolute;
+	left: 0;
+	background-color: #F5D580;
+	text-align: center;
+	min-width: 100%;
+	visibility: hidden;
+	transition: all ease .25s;
+	opacity: 0;
 }
 
 .dropdown li:hover {
-	background-color: #eaaa00;
+	background-color: #EAAA00;
 }
 
 .dropdown ul li {
 	padding: 2px 0;
-	z-index: 1;
 }
 
 .dropdown:hover ul, .dropdown ul:hover {
-	display: block;
-	position: absolute;
-	left: 0;
-	background-color: #f5d580;
-	text-align: center;
-	min-width: 100%;
+	visibility: visible;
+	opacity: 1;
 }
 
 /*** CONTENT ***/

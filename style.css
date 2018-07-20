@@ -41,12 +41,27 @@ header {
 	transition: ease .25s;
 }
 
+.navbar img {
+	max-height: 1em;
+}
+
+#github-icon {
+	padding-right: 1em;
+}
+
+#github-li:hover {
+	background-color: inherit;
+}
+
+/** DROPDOWN **/
+/* Set all dropdown properties now, take it out of document flow with position: absolute; and hide it with visibility
+as we cannot animate it if display is set to none */
 .dropdown ul {
-	margin: 0;
+	margin: 5px auto; /* account for .navbar ul li margin */
 	display: block;
 	position: absolute;
 	left: 0;
-	background-color: #F5D580;
+	background-color: #EAAA00;
 	text-align: center;
 	min-width: 100%;
 	visibility: hidden;
@@ -55,7 +70,7 @@ header {
 }
 
 .dropdown li:hover {
-	background-color: #EAAA00;
+	background-color: #F5D580;
 }
 
 .dropdown ul li {

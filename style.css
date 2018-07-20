@@ -2,8 +2,12 @@ body {
 	font-family: 'Roboto', 'Helvetica', sans-serif;
 	margin: 0 auto;
 	color: white;
+	background-color: black;
 }
-
+header {
+	background-color: #EAAA00;
+	padding-left: 1rem;
+}
 .container {
 	display: flex;
 	flex: auto;
@@ -14,7 +18,6 @@ body {
 .navbar {
 	font-family: 'Zilla Slab', serif;
 	font-size: 16pt;
-	background-color: #EAAA00;
 }
 
 .navbar ul {
@@ -43,6 +46,10 @@ body {
 	display: none;
 }
 
+.dropdown li:hover {
+	background-color: #eaaa00;
+}
+
 .dropdown ul li {
 	padding: 2px 0;
 	z-index: 1;
@@ -51,8 +58,8 @@ body {
 .dropdown:hover ul, .dropdown ul:hover {
 	display: block;
 	position: absolute;
-	background-color: #F5D580;
 	left: 0;
+	background-color: #f5d580;
 	text-align: center;
 	min-width: 100%;
 }

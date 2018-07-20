@@ -1,56 +1,62 @@
 body {
 	font-family: 'Roboto', 'Helvetica', sans-serif;
 	background-color: black;
+	margin: 0 auto;
 	color: white;
 }
+
+.container {
+	display: flex;
+	flex: auto;
+}
+
 /*** NAV ***/
 .navbar {
 	font-family: 'Zilla Slab', serif;
 	font-size: 16pt;
-	padding: 2px;
 }
+
 .navbar ul {
 	list-style: none;
-	padding: 0 20px;
+	padding: 0 0;
+	margin: 0 0;
 }
 
-.navbar li {
-	display: block;
-  float: left;
-  position: relative;
+.navbar a {
+	text-decoration: none;
+	color: white;
 }
 
-.navbar li::after {
-	content: ' | '
+.navbar ul li {
+	padding: 5px;
+	position: relative;
 }
 
-/*** LANGUAGE DROPDOWN ***/
+.navbar li:hover {
+	background-color: grey;
+	transition: ease-in-out .25s;
+}
+
 .dropdown ul {
-  visibility: hidden;
-  background-color: white;
-  position: absolute;
-  transition: all 0.5s ease;
-  margin-top: 0;
-  left: 0;
-  display: none;
+	margin: 0;
+	display: none;
 }
 
-.dropdown li {
-  clear: both;
-  width: 100%;
+.dropdown ul li {
+	padding: 2px 0;
+	z-index: 1;
 }
 
-.dropdown li:after {
-  content: none;
-}
-
-.navbar ul li:hover > ul, ul li ul:hover {
-  display: block;
-  visibility: visible;
+.dropdown:hover ul, .dropdown ul:hover {
+	display: flex;
+	flex-direction: column;
 }
 
 /*** CONTENT ***/
 .content {
 	display: block;
+	position: relative;
+	z-index: -1;
 	margin-left: 0;
+	background-color: orange;
 }

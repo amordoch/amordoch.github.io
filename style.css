@@ -1,6 +1,5 @@
 body {
 	font-family: 'Roboto', 'Helvetica', sans-serif;
-	background-color: black;
 	margin: 0 auto;
 	color: white;
 }
@@ -8,12 +7,14 @@ body {
 .container {
 	display: flex;
 	flex: auto;
+	flex-wrap: wrap;
 }
 
 /*** NAV ***/
 .navbar {
 	font-family: 'Zilla Slab', serif;
 	font-size: 16pt;
+	background-color: #EAAA00;
 }
 
 .navbar ul {
@@ -24,7 +25,7 @@ body {
 
 .navbar a {
 	text-decoration: none;
-	color: white;
+	color: black;
 }
 
 .navbar ul li {
@@ -33,7 +34,7 @@ body {
 }
 
 .navbar li:hover {
-	background-color: grey;
+	background-color: #F5D580;
 	transition: ease-in-out .25s;
 }
 
@@ -48,15 +49,14 @@ body {
 }
 
 .dropdown:hover ul, .dropdown ul:hover {
-	display: flex;
-	flex-direction: column;
+	display: block;
+	position: absolute;
+	background-color: #F5D580;
+	left: 0;
+	text-align: center;
+	min-width: 100%;
 }
 
 /*** CONTENT ***/
 .content {
-	display: block;
-	position: relative;
-	z-index: -1;
-	margin-left: 0;
-	background-color: orange;
 }

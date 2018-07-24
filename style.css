@@ -1,156 +1,190 @@
 /* General */
+
 /* TODO: add media query to change font sizes on small screens */
-* { -webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
-	font-family: 'Roboto', 'Helvetica', sans-serif;
-	margin: 0 auto;
-	color: white;
-	background-color: black;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  margin: 0 auto;
+  color: white;
+  background-color: black;
+}
+
+h1, h2, h3 {
+  font-family: 'Zilla Slab', serif;
 }
 
 header {
-	background-color: #EAAA00;
-	padding-left: 1em;
+  background-color: #EAAA00;
+  padding-left: 1em;
 }
 
 main {
-	background: no-repeat url("static/DSC_3174.jpg");
-	background-size: cover;
-	background-attachment: scroll;
-	min-height: 100vh;
+  background: no-repeat url("static/DSC_3174.jpg");
+  background-size: cover;
+  background-attachment: scroll;
+  min-height: 100%;
 }
 
 .container {
-	display: flex;
-	flex: auto;
-	flex-wrap: wrap;
-	align-content: center;
+  display: flex;
+  flex: auto;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 @media all and (max-width: 7in) {
-	html {
-		font-size: .8em;
-	}
+  html {
+    font-size: .8em;
+  }
 }
 
 /*** NAV ***/
+
 .navbar {
-	font-family: 'Zilla Slab', serif;
-	font-size: 1.25em;
+  font-family: 'Zilla Slab', serif;
+  font-size: 1.25em;
 }
 
 .navbar ul {
-	list-style: none;
-	padding: 0 0;
-	margin: 0 0;
+  list-style: none;
+  padding: 0 0;
+  margin: 0 0;
 }
 
 .navbar a {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .navbar ul li {
-	padding: 5px;
-	position: relative;
+  padding: 5px;
+  position: relative;
 }
 
 .navbar li:hover {
-	background-color: #F5D580;
-	transition: ease .25s;
+  background-color: #F5D580;
+  transition: ease .25s;
 }
 
 .navbar img {
-	max-height: 1em;
+  max-height: 1em;
 }
 
 #github-icon {
-	padding-right: 1em;
-	margin-left: 2px;
+  padding-right: 1em;
+  margin-left: 2px;
 }
 
 #github-li:hover, #linkedin:hover {
-	background-color: inherit;
+  background-color: inherit;
 }
 
 /** DROPDOWN **/
+
 /* Set all dropdown properties now, take it out of document flow with position: absolute; and hide it with visibility
 as we cannot animate it if display is set to none */
+
 .dropdown ul {
-	margin: 5px auto; /* account for .navbar ul li margin */
-	display: block;
-	position: absolute;
-	left: 0;
-	background-color: #EAAA00;
-	text-align: center;
-	min-width: 100%;
-	visibility: hidden;
-	transition: all ease .25s;
-	opacity: 0;
+	/* account for .navbar ul li margin */
+  margin: 5px auto;
+  display: block;
+  position: absolute;
+  left: 0;
+  background-color: #EAAA00;
+  text-align: center;
+  min-width: 100%;
+  visibility: hidden;
+  transition: all ease .25s;
+  opacity: 0;
+	z-index: 999;
 }
 
 .dropdown li:hover {
-	background-color: #F5D580;
+  background-color: #F5D580;
 }
 
 .dropdown ul li {
-	padding: 2px 0;
+  padding: 2px 0;
 }
 
 .dropdown:hover ul, .dropdown ul:hover {
-	visibility: visible;
-	opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 /*** CONTENT ***/
+
 .content {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(2, .5fr);
-	grid-auto-rows: minmax(10vh, auto);
-	grid-column-gap: 2vh;
-	-webkit-text-stroke: 1px black;
-	margin: 0 1em;
-	font-size: 1.5em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto repeat(2, 1fr);
+  grid-auto-rows: minmax(10vh, auto);
+  grid-column-gap: 30vw;
+  margin: 0 1em;
+  font-size: 1.5em;
+  -webkit-text-stroke: 1px black;
+}
+
+/* For blocks of content */
+.give-bg {
+  background-color: rgba(0, 0, 0, .2);
+  -webkit-text-stroke: 0;
+}
+
+.content h1, h2, h3 {
+    background-color: unset;
 }
 
 .content h1 {
-	font-family: 'Zilla Slab';
-	font-size: 3em;
-	grid-column: 1 / -1;
-	text-align: center;
-	margin: 0;
+  font-family: 'Zilla Slab';
+  font-size: 3em;
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 0;
 }
 
 .content h2 {
-	margin-top: 0;
+  font-size: 2em;
+}
+
+.grid-box:nth-of-type(even) {
+  text-align: right;
+}
+
+/* For construction notification */
+#lang-overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: black;
+	text-align: center;
+}
+
+#lang-overlay p {
+	margin: 10% auto;
 	font-size: 2em;
-}
-
-.content p {
-	-webkit-text-stroke: 0;
-	background-color: rgba(0, 0, 0, .2);
-}
-
-.content div:nth-of-type(even) {
-	text-align: right;
-}
-
-.content img {
-	max-width: 100%;
+  /* Hebrew serif font looks horrendous */
+	font-family: 'Zilla Slab', sans-serif;
 }
 
 /* Reduce font size on small devices */
+
 @media all and (max-width: 5in) {
-	.content {
-		font-size: .8em;
-	}
+  .content {
+    font-size: .8em;
+  }
 }
 
 @media all and (max-width: 7in) {
-	.content {
-		font-size: 1em;
-	}
+  .content {
+    font-size: 1em;
+  }
 }

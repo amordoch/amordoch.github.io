@@ -28,7 +28,7 @@ main {
     background: no-repeat url("static/DSC_3174.jpg");
     background-size: cover;
     background-attachment: scroll;
-    min-height: 100%;
+    height: 100vh;
 }
 
 .container {
@@ -41,6 +41,10 @@ main {
 @media all and (max-width: 7in) {
     html {
         font-size: .8em;
+    }
+
+    .navbar {
+        font-size: 1.5em;
     }
 }
 
@@ -177,11 +181,14 @@ as we cannot animate it if display is set to none */
     font-family: 'Zilla Slab', sans-serif;
 }
 
-/* Reduce font size on small devices */
+/* Reduce font size, transition from grid to column on small devices */
 
 @media all and (max-width: 5in) {
     .content {
         font-size: .8em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
 

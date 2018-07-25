@@ -163,20 +163,24 @@ as we cannot animate it if display is set to none */
 
 /* For construction notification */
 
-#lang-overlay {
+.hide {
     display: none;
-    position: absolute;
+}
+
+.show {
+    display: block;
+}
+
+#lang-overlay {
+    position: fixed;
     top: 0;
     height: 100%;
     width: 100%;
     background: black;
     text-align: center;
-}
-
-#lang-overlay p {
-    margin: 10% auto;
+    padding-top: 10%;
     font-size: 2em;
-    /* Hebrew serif font looks horrendous */
+    /* Hebrew in serif fonts is horrific */
     font-family: 'Zilla Slab', sans-serif;
 }
 

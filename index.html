@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="static/flags/css/flag-icon.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+	<!-- I don't want to use jQuery just yet. I'm of the opinion I should learn the hard way first.
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	-->
 </head>
 
 <body>
@@ -70,34 +73,37 @@
                 </div>
             </div>
         </div>
-        <div id="lang-overlay"></div>
+        <div id="lang-overlay" class="hide">
+        	<p></p>
+		    <a href="#en" onclick="rm_lang_overlay(event)">
+		    	<span class="flag-icon flag-icon-gb-eng"></span>
+		    </a>
+        </div>
     </main>
     <!--- Overlay script for non-english languages -->
     <script type="text/javascript">
         // Overlay construction notification
         function add_lang_overlay(event) {
-            span_classes = event.target.className;
-            overlay = document.getElementById('lang-overlay');
-            main = document.getElementsByTagName('main')[0];
-            main.style.position = 'relative';
-            overlay.style.display = 'block';
+            span_classes = event.target.classList;
+			overlay = document.getElementById('lang-overlay')
+            overlay.classList.add('show');
             // Language-specific under construction message
-            if (span_classes.includes('flag-icon-de')) {
-                overlay.innerHTML = '<p>Die deutsche Seite ist gerade im Aufbau.\
+            if (span_classes.contains('flag-icon-de')) {
+				// Select first <p> of the lang-overlay div
+                overlay.children[0].innerHTML = 'Die deutsche Seite ist gerade im Aufbau.\
 				Während des Aufbaus, bitte benutzen Sie die englische Seite.\
-				Dankeschön!</p>'
-            } else if (span_classes.includes('flag-icon-il')) {
-                overlay.innerHTML = '<p>\u202eדף זה נבנה. נא להשתמש באתר האנגלית. תודה!\u202e</p>';
-            }
+				Dankeschön!';
+            } else if (span_classes.contains('flag-icon-il')) {
+                overlay.children[0].innerHTML = '\u202eדף זה נבנה. נא להשתמש באתר האנגלית. תודה!\u202e';
+            } else {
+				overlay.children[0].innerHTML = 'Looks like something went wrong. Please click the\
+				flag below to return to the previous page.';
+			}
         }
 
         // Remove construction notification
         function rm_lang_overlay(event) {
-            overlay = document.getElementById('lang-overlay');
-            main = document.getElementsByTagName('main')[0];
-            main.style.position = null;
-            overlay.innerHTML = null;
-            overlay.style.display = null;
+            document.getElementById('lang-overlay').classList.remove('show');
         }
     </script>
 </body>

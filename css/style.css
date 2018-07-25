@@ -165,8 +165,9 @@ as we cannot animate it if display is set to none */
     text-align: right;
 }
 
-.grid-box:nth-of-type(even) ul {
+.grid-box ul {
     list-style-position: inside;
+    padding-left: 0;
 }
 
 /* For construction notification */
@@ -190,13 +191,6 @@ as we cannot animate it if display is set to none */
     font-size: 2em;
     /* Hebrew in serif fonts is horrific */
     font-family: 'Zilla Slab', sans-serif;
-}
-
-/* Specific content pane styling */
-
-.hobbies ul {
-  list-style-position: inside;
-  padding-left: 0;
 }
 
 /* Reduce font size, transition from grid to column on small devices */

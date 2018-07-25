@@ -28,6 +28,16 @@ main {
     background: no-repeat url("../static/DSC_3174.jpg") top/cover scroll;
 }
 
+footer {
+  font-size: .6em;
+  padding-left: 1rem;
+  width: 100%;
+}
+
+footer a:visited {
+  color: inherit;
+}
+
 .container {
     display: flex;
     flex: auto;

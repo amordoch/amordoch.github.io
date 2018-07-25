@@ -1,0 +1,6 @@
+/* Specific content pane styling for homepage */
+
+.hobbies ul {
+  list-style-position: inside;
+  padding-left: 0;
+}

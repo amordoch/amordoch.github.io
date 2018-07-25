@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Roboto', 'Helvetica', sans-serif;
-    margin: 0 auto;
+    margin: auto;
     color: white;
     background-color: black;
 }
@@ -112,7 +112,6 @@ as we cannot animate it if display is set to none */
     visibility: hidden;
     transition: all ease .25s;
     opacity: 0;
-    z-index: 999;
 }
 
 .dropdown li:hover {
@@ -193,6 +192,13 @@ as we cannot animate it if display is set to none */
     font-size: 2em;
     /* Hebrew in serif fonts is horrific */
     font-family: 'Zilla Slab', sans-serif;
+}
+
+/* Specific content pane styling */
+
+.hobbies ul {
+  list-style-position: inside;
+  padding-left: 0;
 }
 
 /* Reduce font size, transition from grid to column on small devices */

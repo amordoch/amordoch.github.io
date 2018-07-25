@@ -168,6 +168,10 @@ as we cannot animate it if display is set to none */
     text-align: right;
 }
 
+.grid-box:nth-of-type(even) ul {
+    list-style-position: inside;
+}
+
 /* For construction notification */
 
 .hide {

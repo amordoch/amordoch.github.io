@@ -25,7 +25,7 @@ header {
 }
 
 main {
-    background: no-repeat url("static/DSC_3174.jpg");
+    background: no-repeat url("../static/DSC_3174.jpg");
     background-size: cover;
     background-attachment: scroll;
 }

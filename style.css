@@ -79,6 +79,10 @@ main {
     max-height: 1em;
 }
 
+#linkedin {
+    margin-left: auto;
+}
+
 #github-icon {
     padding-right: 1em;
     margin-left: 2px;
@@ -89,6 +93,10 @@ main {
 }
 
 /** DROPDOWN **/
+
+.dropdown img {
+    padding: 0 .2em;
+}
 
 /* Set all dropdown properties now, take it out of document flow with position: absolute; and hide it with visibility
 as we cannot animate it if display is set to none */

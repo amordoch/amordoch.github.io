@@ -2,117 +2,126 @@
 <html lang="en-US">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Ariel Mordoch">
-    <meta name="description" content="The personal website of Ariel Mordoch.">
-    <title>Ariel Mordoch</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="static/flags/css/flag-icon.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/home.css">
-    <!-- I don't want to use jQuery just yet. I'm of the opinion I should learn the hard way first.
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	-->
-    <!-- Overlay script for non-english languages -->
-    <script src="./js/construction_overlay.js" charset="utf-8"></script>
+  <meta charset="utf-8">
+  <meta name="author" content="Ariel Mordoch">
+  <meta name="description" content="The personal website of Ariel Mordoch.">
+  <title>Ariel Mordoch</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
+  <link rel="stylesheet" href="static/flags/css/flag-icon.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <!-- I don't want to use jQuery just yet. I'm of the opinion I should learn the hard way first.
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122941823-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-122941823-1');
+  </script>
+  <!-- Overlay script for non-english languages -->
+  <script src="./js/construction_overlay.js" charset="utf-8"></script>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <ul class="container">
-                <li><a href="index.html">home</a></li>
-                <li><a href="#">resume</a></li>
-                <li><a href="#">contact</a></li>
-                <li class="dropdown">
-                  <img src="static/lang-icon.png" alt="Langauges">
-                  <ul>
-                      <li><a href="#en" onclick="rm_lang_overlay(event);"><span class="flag-icon flag-icon-gb-eng"></span></a></li>
-                      <li><a href="#he" onclick="add_lang_overlay(event);"><span class="flag-icon flag-icon-il"></span></a></li>
-                      <li><a href="#de" onclick="add_lang_overlay(event);"><span class="flag-icon flag-icon-de"></span></a></li>
-                  </ul>
-                </li>
-                <li id="linkedin">
-                    <a href="http://www.linkedin.com/in/ariel-mordoch-7b9950139">
-                      <img src="static/In-2C-28px-R.png" alt="My LinkedIn">
-                    </a>
-                </li>
-                <li id="github-li">
-                  <a href="https://github.com/amordoch" target="_blank">
-                    <img id="github-icon" src="static/gh-icon.png" alt="Ariel's Github">
+  <header>
+      <nav class="navbar">
+          <ul class="container">
+              <li><a href="index.html">home</a></li>
+              <li><a href="#">resume</a></li>
+              <li><a href="#">contact</a></li>
+              <li class="dropdown">
+                <img src="static/lang-icon.png" alt="Langauges">
+                <ul>
+                    <li><a href="#en" onclick="rm_lang_overlay(event);"><span class="flag-icon flag-icon-gb-eng"></span></a></li>
+                    <li><a href="#he" onclick="add_lang_overlay(event);"><span class="flag-icon flag-icon-il"></span></a></li>
+                    <li><a href="#de" onclick="add_lang_overlay(event);"><span class="flag-icon flag-icon-de"></span></a></li>
+                </ul>
+              </li>
+              <li id="linkedin">
+                  <a href="http://www.linkedin.com/in/ariel-mordoch-7b9950139">
+                    <img src="static/In-2C-28px-R.png" alt="My LinkedIn">
                   </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="content">
-            <h1>ariel mordoch</h1>
-            <div class="grid-box">
-                <h2>welcome</h2>
-                <div class="give-bg">
-                    <p>Hi, you've reached the website of Ariel Mordoch. I was
-                      born in Tel Aviv, Israel and moved to Atlanta, GA when I
-                      was 4 years old. Now, I'm a Junior at Georgia Tech,
-                      majoring in Aerospace Engineering and am currently interning
-                      at Honda Aircraft Company in Greensboro, NC. I am an active
-                      brother of AEPi and a member of the aerospace honor
-                      fraternity SGT. I also hold an FAA Private Pilot Certificate
-                      and speak English, Hebrew, and German.</p>
-                </div>
-            </div>
-            <div class="grid-box">
-                <h2>experience</h2>
-                <div class="give-bg">
-                    <p>Honda Aircraft Company <em>(May 2018 - August 2018)</em></p>
-                    <p>Greensboro, NC</p>
-                    <ul>
-                        <li>responsibility</li>
-                        <li>responsibility</li>
-                        <li>responsibility</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="grid-box">
-                <h2>hobbies & interests</h2>
-                <div class="give-bg hobbies">
-                    <ul>
-                        <li>My favorite thing to do is flying. I love being
-                          behind the controls of an airplane. I generally fly
-                          Piper Cherokees.
-                        </li>
-                        <li>Soccer. Heja BVB!</li>
-                        <li>Gaming - you can usually catch me playing KSP,
-                          Witcher 3: Wild Hunt, Skyrim, ...and FIFA (of course).
-                        </li>
-                        <li>Coding. It's good that I like it, otherwise I wouldn't
-                          have had the patience to make the CSS for this website
-                          (By the way: whoever came up with the idea for grid and flexbox, thanks).
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="grid-box">
-                <h2>projects</h2>
-                <div class="give-bg">
-                    <ul>
-                      <li>This website! Coded completely from scratch. No
-                      bootstrap, no jQuery, no frameworks. The &quot;hard&quot; way.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div id="lang-overlay" class="hide">
-            <p></p>
-            <a href="#en" onclick="rm_lang_overlay(event)">
-		    	    <span class="flag-icon flag-icon-gb-eng"></span>
-		        </a>
-        </div>
-    </main>
-    <footer>
-      <p>Copyright &copy; 2018 Ariel Mordoch. Licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> See link for details.</p>
-    </footer>
+              </li>
+              <li id="github-li">
+                <a href="https://github.com/amordoch" target="_blank">
+                  <img id="github-icon" src="static/gh-icon.png" alt="Ariel's Github">
+                </a>
+              </li>
+          </ul>
+      </nav>
+  </header>
+  <main>
+      <div class="content">
+          <h1>ariel mordoch</h1>
+          <div class="grid-box">
+              <h2>welcome</h2>
+              <div class="give-bg">
+                  <p>Hi, you've reached the website of Ariel Mordoch. I was
+                    born in Tel Aviv, Israel and moved to Atlanta, GA when I
+                    was 4 years old. Now, I'm a Junior at Georgia Tech,
+                    majoring in Aerospace Engineering and am currently interning
+                    at Honda Aircraft Company in Greensboro, NC. I am an active
+                    brother of AEPi and a member of the aerospace honor
+                    fraternity SGT. I also hold an FAA Private Pilot Certificate
+                    and speak English, Hebrew, and German.</p>
+              </div>
+          </div>
+          <div class="grid-box">
+              <h2>experience</h2>
+              <div class="give-bg">
+                  <p>Honda Aircraft Company <em>(May 2018 - August 2018)</em></p>
+                  <p>Greensboro, NC</p>
+                  <ul>
+                      <li>responsibility</li>
+                      <li>responsibility</li>
+                      <li>responsibility</li>
+                  </ul>
+              </div>
+          </div>
+          <div class="grid-box">
+              <h2>hobbies & interests</h2>
+              <div class="give-bg hobbies">
+                  <ul>
+                      <li>My favorite thing to do is flying. I love being
+                        behind the controls of an airplane. I generally fly
+                        Piper Cherokees.
+                      </li>
+                      <li>Soccer. Heja BVB!</li>
+                      <li>Gaming - you can usually catch me playing KSP,
+                        Witcher 3: Wild Hunt, Skyrim, ...and FIFA (of course).
+                      </li>
+                      <li>Coding. It's good that I like it, otherwise I wouldn't
+                        have had the patience to make the CSS for this website
+                        (By the way: whoever came up with the idea for grid and flexbox, thanks).
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="grid-box">
+              <h2>projects</h2>
+              <div class="give-bg">
+                  <ul>
+                    <li>This website! Coded completely from scratch. No
+                    bootstrap, no jQuery, no frameworks. The &quot;hard&quot; way.</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div id="lang-overlay" class="hide">
+          <p></p>
+          <a href="#en" onclick="rm_lang_overlay(event)">
+	    	    <span class="flag-icon flag-icon-gb-eng"></span>
+	        </a>
+      </div>
+  </main>
+  <footer>
+    <p>Copyright &copy; 2018 Ariel Mordoch. Licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> See link for details.</p>
+  </footer>
 </body>
 
 </html>

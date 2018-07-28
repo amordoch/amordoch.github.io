@@ -208,16 +208,19 @@ as we cannot animate it if display is set to none */
 
 /* Reduce font size, transition from grid to column on small devices */
 
-@media all and (max-width: 5in) {
+@media all and (max-width: 5in), (min-resolution: 192dpi) {
     .content {
         font-size: .8em;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+    }
+
+    .grid-box {
+      margin-bottom: 1em;
     }
 }
 
-@media all and (max-width: 7in) {
+@media all and (max-width: 7in), (min-resolution: 144dpi) {
     .content {
         font-size: .8em;
     }

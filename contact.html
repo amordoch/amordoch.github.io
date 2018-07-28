@@ -60,8 +60,8 @@
             function handle_captcha(response) {
               eml = new XMLHttpRequest();
               eml.responseType = 'json';
-              eml.send();
               eml.open("GET", "https://amordoch.github.io/hidden.json");
+              eml.send();
               encrypted = eml.response.email;
               var decoded;
               for(let i = 0; i < encrypted.length; i++) {

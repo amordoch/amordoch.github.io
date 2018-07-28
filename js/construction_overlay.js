@@ -10,7 +10,7 @@ function add_lang_overlay(event) {
         overlay.children[0].innerHTML = 'Die deutsche Seite ist gerade im Aufbau. \
 Während des Aufbaus, bitte benutzen Sie die englische Seite. Dankeschön!';
     } else if (span_classes.contains('flag-icon-il')) {
-        overlay.children[0].innerHTML = '\u202eדף זה נבנה. נא להשתמש באתר האנגלית. תודה!\u202e';
+        overlay.children[0].innerHTML = '\u202eתרגום האתר לא מוחן. נא להשתמש בגירסה האנגלית. תודה\u202e';
     } else {
         overlay.children[0].innerHTML = 'Looks like something went wrong. Please click the \
 flag below to return to the previous page.';

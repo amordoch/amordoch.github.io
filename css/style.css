@@ -144,16 +144,6 @@ as we cannot animate it if display is set to none */
 
 /* For blocks of content */
 
-.grid-box {
-  background: rgba(255, 255, 255, 0.4);
-  border: rgba(0, 0, 0, 0.2) 1px solid;
-  border-radius: .5em;
-  padding-left: 2%;
-  padding-right: 2%;
-  color: black;
-  box-shadow: 2px 2px 1px rgba(0,0,0, .2);
-}
-
 .content h1 {
     font-size: 3em;
     grid-column: 1 / -1;
@@ -164,6 +154,16 @@ as we cannot animate it if display is set to none */
 .content h2 {
     font-size: 2em;
     margin-top: auto;
+}
+
+.grid-box {
+  background: rgba(255, 255, 255, 0.4);
+  border: rgba(0, 0, 0, 0.2) 1px solid;
+  border-radius: .5em;
+  padding-left: 2%;
+  padding-right: 2%;
+  color: black;
+  box-shadow: 2px 2px 1px rgba(0,0,0, .2);
 }
 
 .grid-box:nth-of-type(even) {

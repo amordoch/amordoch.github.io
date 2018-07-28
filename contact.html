@@ -52,7 +52,7 @@
       <div class="grid-box">
         <h2>by email</h2>
         <div class="give-bg">
-          <p>To protect myself from spam, I will not advertide my email address.
+          <p>To protect myself from spam, I will not advertise my email address.
           If you would like to contact me, simply verify yourself below, send
           your message, and I will get back to you as soon as I can.</p>
           <div class="g-recaptcha" data-sitekey="6LdUbGYUAAAAABweMCOU_dfKXnAJgE8G2eQ4Cja_" data-callback="handle_captcha"></div>
@@ -61,7 +61,13 @@
               eml = new XMLHttpRequest();
               eml.reponseType = 'json';
               eml.open("GET", "https://amordoch.github.io/hidden.json");
-              window.location.assign("mailto:" + eml.response.email);
+              encrypted = eml.response.email;
+              var decoded;
+              for(let i = 0; i < length(encrypted); i++) {
+                decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
+              }
+              console.log(decoded)
+              window.location.assign("mailto:" + decoded);
             }
           </script>
         </div>

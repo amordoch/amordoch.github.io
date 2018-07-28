@@ -58,17 +58,17 @@
           <div class="g-recaptcha" data-sitekey="6LdUbGYUAAAAABweMCOU_dfKXnAJgE8G2eQ4Cja_" data-callback="handle_captcha"></div>
           <script type="text/javascript">
             function handle_captcha(response) {
-              eml = new XMLHttpRequest();
-              eml.responseType = 'json';
-              eml.open("GET", "https://amordoch.github.io/hidden.json");
-              eml.send();
-              encrypted = eml.response.email;
-              var decoded = '';
-              for(let i = 0; i < encrypted.length; i++) {
-                decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
-              }
-              console.log(decoded)
-              window.location.assign("mailto:" + decoded);
+              fetch('https://amordoch.github.io/hidden.json').then(
+                respone => reponse.json()
+              ).then( function(eml) {
+                encrypted = eml.email;
+                var decoded = '';
+                for(let i = 0; i < encrypted.length; i++) {
+                  decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
+                }
+                console.log(decoded);
+                window.location.assign("mailto:" + decoded);
+              });
             }
           </script>
         </div>

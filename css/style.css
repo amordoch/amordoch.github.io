@@ -37,8 +37,16 @@ footer {
   height: auto;
 }
 
-footer a:visited {
+footer a, a:visited {
   color: inherit;
+}
+
+a {
+  color: #004F9F;
+}
+
+a:hover, a:focus {
+  color: #1879DB;
 }
 
 .container {

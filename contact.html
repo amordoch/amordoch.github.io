@@ -63,7 +63,7 @@
               eml.open("GET", "https://amordoch.github.io/hidden.json");
               encrypted = eml.response.email;
               var decoded;
-              for(let i = 0; i < length(encrypted); i++) {
+              for(let i = 0; i < encrypted.length; i++) {
                 decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
               }
               console.log(decoded)

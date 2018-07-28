@@ -59,7 +59,7 @@
           <script type="text/javascript">
             function handle_captcha(response) {
               fetch('https://amordoch.github.io/hidden.json').then(
-                respone => reponse.json()
+                response => response.json()
               ).then( function(eml) {
                 encrypted = eml.email;
                 var decoded = '';

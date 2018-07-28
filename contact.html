@@ -61,6 +61,7 @@
               eml = new XMLHttpRequest();
               eml.reponseType = 'json';
               eml.open("GET", "https://amordoch.github.io/hidden.json");
+              eml.send();
               encrypted = eml.response.email;
               var decoded;
               for(let i = 0; i < encrypted.length; i++) {

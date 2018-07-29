@@ -227,6 +227,6 @@ as we cannot animate it if display is set to none */
         font-size: .8em;
     }
     .navbar {
-        font-size: 2em;
+        font-size: 1.5em;
     }
 }

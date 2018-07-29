@@ -208,7 +208,8 @@ as we cannot animate it if display is set to none */
 
 /* Reduce font size, transition from grid to column on small devices */
 
-@media all and (max-width: 5in), (min-resolution: 192dpi) {
+@media all and (max-width: 5in), (min-resolution: 192dpi),
+(-webkit-min-device-pixel-ratio: 2) {
     .content {
         font-size: .8em;
         display: flex;
@@ -220,7 +221,8 @@ as we cannot animate it if display is set to none */
     }
 }
 
-@media all and (max-width: 7in), (min-resolution: 144dpi) {
+@media all and (max-width: 7in), (min-resolution: 144dpi),
+(-webkit-min-device-pixel-raito: 1.5) {
     .content {
         font-size: .8em;
     }

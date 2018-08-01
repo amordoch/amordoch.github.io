@@ -56,6 +56,40 @@ a:hover, a:focus {
     align-content: center;
 }
 
+.unsupported-browser {
+    display: none;
+    font-size: 1.2em;
+    color: black;
+    height: 3em;
+    /* Thanks, Github */
+    background-image: linear-gradient(#f7f7f7, #eaeaea);
+}
+
+.no-cssgrid header {
+    padding-left: 0;
+}
+
+.no-cssgrid .unsupported-browser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-cssgrid main {
+    /* Required by IE to display background image for some reason */
+    display: block;
+}
+
+.no-cssgrid .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.no-cssgrid .grid-box {
+    margin-bottom: 1em;
+}
+
 /*** NAV ***/
 
 .navbar {

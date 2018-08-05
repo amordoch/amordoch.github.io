@@ -236,9 +236,13 @@ as we cannot animate it if display is set to none */
 }
 
 /* Reduce font size, transition from grid to column on small devices */
+@media all and (max-width: 7in), (min-resolution: 144dpi),
+(-webkit-min-device-pixel-raito: 1.5) {
 
-@media all and (max-width: 5in), (min-resolution: 192dpi),
-(-webkit-min-device-pixel-ratio: 2) {
+    main {
+      background-position: top;  
+    }
+
     .content {
         font-size: .8em;
         display: flex;
@@ -248,13 +252,7 @@ as we cannot animate it if display is set to none */
     .grid-box {
       margin-bottom: 1em;
     }
-}
 
-@media all and (max-width: 7in), (min-resolution: 144dpi),
-(-webkit-min-device-pixel-raito: 1.5) {
-    .content {
-        font-size: .8em;
-    }
     .navbar {
         font-size: 1.5em;
     }

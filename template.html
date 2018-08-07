@@ -27,7 +27,7 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="unsupported-browser"><p><strong>Warning: Your browser is not supported. This site may not function correctly.</strong></p></div>    
+      <div class="unsupported-browser"><p><strong>Warning: Your browser is not supported. This site may not function correctly.</strong></p></div>
       <ul class="container">
         <li><a href="./index.html">home</a></li>
         <li><a href="#">resume</a></li>
@@ -36,8 +36,8 @@
           <img src="./static/lang-icon.png" alt="Languages">
           <ul>
             <li><a href="#en" onclick="rm_lang_overlay(event);"><span class="flag-icon flag-icon-gb-eng"></span></a></li>
-            <li><a href="#he" onclick="add_lang_overlay(event);"><span class="flag-icon flag-icon-il"></span></a></li>
-            <li><a href="#de" onclick="add_lang_overlay(event);"><span class="flag-icon flag-icon-de"></span></a></li>
+            <li><a href="#he" onclick="add_lang_overlay(event, 'he');"><span class="flag-icon flag-icon-il"></span></a></li>
+            <li><a href="#de" onclick="add_lang_overlay(event, 'de');"><span class="flag-icon flag-icon-de"></span></a></li>
           </ul>
         </li>
         <li id="linkedin">
@@ -70,6 +70,14 @@
   </main>
   <footer>
     <p>Copyright &copy; 2018 Ariel Mordoch. Licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> See link for details.</p>
+    <form>
+        <label for="language-select">Language: </label>
+        <select id="language-select">
+            <option onclick="rm_lang_overlay(event);" value="#en">English (en-US)</option>
+            <option onclick="add_lang_overlay(event, 'de');" value="#de">Deutsch (de-DE)</option>
+            <option onclick="add_lang_overlay(event, 'he');" value="#he">Hebrew (he-IL)</option>
+        </select>
+    </form>
   </footer>
 </body>
 

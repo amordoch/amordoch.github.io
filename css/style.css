@@ -73,6 +73,8 @@ a:hover, a:focus {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  /* How does IE not even support flexbox, a 2011 technology, properly? */
+  height: 0;
 }
 
 .no-cssgrid header {
@@ -80,20 +82,13 @@ a:hover, a:focus {
 }
 
 .no-cssgrid main {
-    /* Required by IE to display background image for some reason */
-    display: block;
     flex-grow: 1;
-}
-
-.no-cssgrid footer {
-  margin-top: auto;
 }
 
 .no-cssgrid .unsupported-browser {
   display: flex;
-  flex-direction: column;
+  margin: auto;
   justify-content: center;
-  align-items: center;
 }
 
 .no-cssgrid .content {
@@ -104,8 +99,6 @@ a:hover, a:focus {
 .no-cssgrid .grid-box {
     margin-bottom: 1em;
 }
-
-
 
 /*** NAV ***/
 
@@ -190,6 +183,13 @@ as we cannot animate it if display is set to none */
    animation-fill-mode: forwards;
 }
 
+/* IE11 doesn't support :focus-within */
+
+.no-cssgrid .dropdown:hover > ul, .dropdown *:focus, .dropdown > ul:hover {
+    animation: drop-in .25s;
+    animation-fill-mode: forwards;
+}
+
 /* drop in by secretly moving to the left, then only animating opacity  */
 
 @keyframes drop-in {
@@ -267,6 +267,10 @@ as we cannot animate it if display is set to none */
 
 .show {
     display: block;
+}
+
+footer form, footer p {
+    display: inline-block;
 }
 
 #lang-overlay {

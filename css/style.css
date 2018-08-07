@@ -150,13 +150,12 @@ as we cannot animate it if display is set to none */
     margin: 5px auto;
     display: block;
     position: absolute;
-    left: 0;
+    left: -9999vw;
+    opacity: 0;
     background-color: #EAAA00;
     text-align: center;
     min-width: 100%;
-    visibility: hidden;
-    transition: all ease .25s;
-    opacity: 0;
+    animation: drop-out .25s;
 }
 
 .dropdown li:hover {
@@ -167,9 +166,40 @@ as we cannot animate it if display is set to none */
     padding: 2px 0;
 }
 
-.dropdown:hover ul, .dropdown ul:hover {
-    visibility: visible;
-    opacity: 1;
+/* And here is the actual magic */
+
+.dropdown:hover > ul, .dropdown:focus-within > ul, .dropdown > ul:hover {
+   animation: drop-in .25s;
+   animation-fill-mode: forwards;
+}
+
+/* drop in by secretly moving to the left, then only animating opacity  */
+
+@keyframes drop-in {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+/* Drop out by animating opacity, then secretly moving to the left */
+
+@keyframes drop-out {
+    0% {
+        opacity: 1;
+        left: 0;
+    }
+    99.9999% {
+        opacity: 0;
+        left: 0;
+    }
+    100% {
+        left: -9999vw;
+    }
 }
 
 /*** CONTENT ***/
@@ -240,7 +270,7 @@ as we cannot animate it if display is set to none */
 (-webkit-min-device-pixel-raito: 1.5) {
 
     main {
-      background-position: top;  
+      background-position: top;
     }
 
     .content {

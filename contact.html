@@ -73,7 +73,6 @@
               for(let i = 0; i < encrypted.length; i++) {
                 decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
               }
-              console.log(decoded);
               window.location.assign("mailto:" + decoded);
             });
           }

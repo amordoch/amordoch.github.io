@@ -9,6 +9,9 @@
 }
 
 body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
     font-family: 'Roboto', 'Helvetica', sans-serif;
     font-size: 20px;
     margin: auto;
@@ -63,21 +66,34 @@ a:hover, a:focus {
     /* Thanks, Github */
     background-image: linear-gradient(#f7f7f7, #eaeaea);
 }
+/*** NO GRID ***/
+
+.no-cssgrid body {
+  /* In essence, changes nothing, but allows sticky footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .no-cssgrid header {
     padding-left: 0;
 }
 
-.no-cssgrid .unsupported-browser {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .no-cssgrid main {
     /* Required by IE to display background image for some reason */
     display: block;
+    flex-grow: 1;
+}
+
+.no-cssgrid footer {
+  margin-top: auto;
+}
+
+.no-cssgrid .unsupported-browser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .no-cssgrid .content {
@@ -88,6 +104,8 @@ a:hover, a:focus {
 .no-cssgrid .grid-box {
     margin-bottom: 1em;
 }
+
+
 
 /*** NAV ***/
 
@@ -206,7 +224,7 @@ as we cannot animate it if display is set to none */
 .content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto 1fr 1fr;
+    grid-template-rows: auto;
     grid-column-gap: 40vw;
     margin: 0 1em;
     grid-row-gap: 5vh;
@@ -267,19 +285,19 @@ as we cannot animate it if display is set to none */
 /* Reduce font size, transition from grid to column on small devices */
 @media all and (max-width: 7in), (min-resolution: 144dpi),
 (-webkit-min-device-pixel-raito: 1.5) {
-    
+
     /* In essence, changes nothing, but allows sticky footer */
-    
+
     body {
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        min-height: 100vh;
     }
-    
+
     footer {
         margin-top: auto;
     }
-    
+
     main {
       background-position: top;
       flex-grow: 1;
@@ -290,7 +308,7 @@ as we cannot animate it if display is set to none */
         display: flex;
         flex-direction: column;
     }
-    
+
     .grid-box {
       margin-bottom: 1em;
     }

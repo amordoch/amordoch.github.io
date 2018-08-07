@@ -34,8 +34,6 @@ main {
 footer {
   font-size: .6em;
   padding-left: 1rem;
-  width: 100%;
-  height: auto;
 }
 
 footer a, a:visited {
@@ -156,6 +154,7 @@ as we cannot animate it if display is set to none */
     text-align: center;
     min-width: 100%;
     animation: drop-out .25s;
+    z-index: 999;
 }
 
 .dropdown li:hover {
@@ -207,7 +206,7 @@ as we cannot animate it if display is set to none */
 .content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
     grid-column-gap: 40vw;
     margin: 0 1em;
     grid-row-gap: 5vh;

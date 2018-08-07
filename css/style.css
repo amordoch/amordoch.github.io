@@ -206,7 +206,7 @@ as we cannot animate it if display is set to none */
 .content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: auto 1fr 1fr;
     grid-column-gap: 40vw;
     margin: 0 1em;
     grid-row-gap: 5vh;
@@ -267,9 +267,22 @@ as we cannot animate it if display is set to none */
 /* Reduce font size, transition from grid to column on small devices */
 @media all and (max-width: 7in), (min-resolution: 144dpi),
 (-webkit-min-device-pixel-raito: 1.5) {
-
+    
+    /* In essence, changes nothing, but allows sticky footer */
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+    
+    footer {
+        margin-top: auto;
+    }
+    
     main {
       background-position: top;
+      flex-grow: 1;
     }
 
     .content {
@@ -277,7 +290,7 @@ as we cannot animate it if display is set to none */
         display: flex;
         flex-direction: column;
     }
-
+    
     .grid-box {
       margin-bottom: 1em;
     }

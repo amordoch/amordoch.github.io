@@ -3,35 +3,35 @@
 /* TODO: add media query to change font sizes on small screens */
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-    font-family: 'Roboto', 'Helvetica', sans-serif;
-    font-size: 20px;
-    margin: auto;
-    color: white;
-    background-color: black;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-size: 20px;
+  margin: auto;
+  color: white;
+  background-color: black;
 }
 
 h1, h2, h3 {
-    font-family: 'Zilla Slab', serif;
+  font-family: 'Zilla Slab', serif;
 }
 
 header {
-    background-color: #EAAA00;
-    padding-left: 1em;
+  background-color: #EAAA00;
+  padding-left: 1em;
 }
 
 main {
-    background: no-repeat url("../static/DSC_3174.jpg") top/cover scroll;
-    padding-bottom: 1em;
-    background-position: center -60px;
+  background: no-repeat url("../static/DSC_3174.jpg") top/cover scroll;
+  padding-bottom: 1em;
+  background-position: center -60px;
 }
 
 footer {
@@ -52,20 +52,21 @@ a:hover, a:focus {
 }
 
 .container {
-    display: flex;
-    flex: auto;
-    flex-wrap: wrap;
-    align-content: center;
+  display: flex;
+  flex: auto;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .unsupported-browser {
-    display: none;
-    font-size: 1.2em;
-    color: black;
-    height: 3em;
-    /* Thanks, Github */
-    background-image: linear-gradient(#f7f7f7, #eaeaea);
+  display: none;
+  font-size: 1.2em;
+  color: black;
+  height: 3em;
+  /* Thanks, Github */
+  background-image: linear-gradient(#f7f7f7, #eaeaea);
 }
+
 /*** NO GRID ***/
 
 .no-cssgrid body {
@@ -78,11 +79,11 @@ a:hover, a:focus {
 }
 
 .no-cssgrid header {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 .no-cssgrid main {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .no-cssgrid .unsupported-browser {
@@ -92,156 +93,156 @@ a:hover, a:focus {
 }
 
 .no-cssgrid .content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .no-cssgrid .grid-box {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 /*** NAV ***/
 
 .navbar {
-    font-family: 'Zilla Slab', serif;
-    font-size: 1.25em;
+  font-family: 'Zilla Slab', serif;
+  font-size: 1.25em;
 }
 
 .navbar ul {
-    list-style: none;
-    padding: 0 0;
-    margin: 0 0;
+  list-style: none;
+  padding: 0 0;
+  margin: 0 0;
 }
 
 .navbar a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .navbar ul li {
-    padding: 5px;
-    position: relative;
+  padding: 5px;
+  position: relative;
 }
 
 .navbar li:hover {
-    background-color: #F5D580;
-    transition: ease .25s;
+  background-color: #F5D580;
+  transition: ease .25s;
 }
 
 .navbar img {
-    max-height: 1em;
+  max-height: 1em;
 }
 
 #linkedin {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 #github-icon {
-    padding-right: 1em;
-    margin-left: 2px;
+  padding-right: 1em;
+  margin-left: 2px;
 }
 
 #github-li:hover, #linkedin:hover {
-    background-color: inherit;
+  background-color: inherit;
 }
 
 /** DROPDOWN **/
 
 .dropdown img {
-    padding: 0 .2em;
+  padding: 0 .2em;
 }
 
 /* Set all dropdown properties now, take it out of document flow with position: absolute; and hide it with visibility
 as we cannot animate it if display is set to none */
 
 .dropdown ul {
-    /* account for .navbar ul li margin */
-    margin: 5px auto;
-    display: block;
-    position: absolute;
-    left: -9999vw;
-    opacity: 0;
-    background-color: #EAAA00;
-    text-align: center;
-    min-width: 100%;
-    animation: drop-out .25s;
-    z-index: 999;
+  /* account for .navbar ul li margin */
+  margin: 5px auto;
+  display: block;
+  position: absolute;
+  left: -9999vw;
+  opacity: 0;
+  background-color: #EAAA00;
+  text-align: center;
+  min-width: 100%;
+  animation: drop-out .25s;
+  z-index: 999;
 }
 
 .dropdown li:hover {
-    background-color: #F5D580;
+  background-color: #F5D580;
 }
 
 .dropdown ul li {
-    padding: 2px 0;
+  padding: 2px 0;
 }
 
 /* And here is the actual magic */
 
-.dropdown:hover > ul, .dropdown:focus-within > ul, .dropdown > ul:hover {
-   animation: drop-in .25s;
-   animation-fill-mode: forwards;
+.dropdown:hover>ul, .dropdown:focus-within>ul, .dropdown>ul:hover {
+  animation: drop-in .25s;
+  animation-fill-mode: forwards;
 }
 
 /* IE11 doesn't support :focus-within */
 
-.no-cssgrid .dropdown:hover > ul, .dropdown *:focus, .dropdown > ul:hover {
-    animation: drop-in .25s;
-    animation-fill-mode: forwards;
+.no-cssgrid .dropdown:hover>ul, .dropdown *:focus, .dropdown>ul:hover {
+  animation: drop-in .25s;
+  animation-fill-mode: forwards;
 }
 
 /* drop in by secretly moving to the left, then only animating opacity  */
 
 @keyframes drop-in {
-    0% {
-        left: 0;
-        opacity: 0;
-    }
-    100% {
-        left: 0;
-        opacity: 1;
-    }
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
 }
 
 /* Drop out by animating opacity, then secretly moving to the left */
 
 @keyframes drop-out {
-    0% {
-        opacity: 1;
-        left: 0;
-    }
-    99.9999% {
-        opacity: 0;
-        left: 0;
-    }
-    100% {
-        left: -9999vw;
-    }
+  0% {
+    opacity: 1;
+    left: 0;
+  }
+  99.9999% {
+    opacity: 0;
+    left: 0;
+  }
+  100% {
+    left: -9999vw;
+  }
 }
 
 /*** CONTENT ***/
 
 .content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    grid-column-gap: 40vw;
-    margin: 0 1em;
-    grid-row-gap: 5vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 40vw;
+  margin: 0 1em;
+  grid-row-gap: 5vh;
 }
 
 /* For blocks of content */
 
 .content h1 {
-    font-size: 3em;
-    grid-column: 1 / -1;
-    text-align: center;
-    margin-top: .5em;
+  font-size: 3em;
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: .5em;
 }
 
 .content h2 {
-    font-size: 2em;
-    margin-top: auto;
+  font-size: 2em;
+  margin-top: auto;
 }
 
 .grid-box {
@@ -251,73 +252,66 @@ as we cannot animate it if display is set to none */
   padding-left: 2%;
   padding-right: 2%;
   color: black;
-  box-shadow: 2px 2px 1px rgba(0,0,0, .2);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
 }
 
-.grid-box > ul {
-    list-style-position: inside;
-    padding-left: 0;
+.grid-box>ul {
+  list-style-position: inside;
+  padding-left: 0;
 }
 
 /* For construction notification */
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .show {
-    display: block;
+  display: block;
 }
 
 footer form, footer p {
-    display: inline-block;
+  display: inline-block;
 }
 
 #lang-overlay {
-    position: fixed;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: black;
-    text-align: center;
-    padding-top: 10%;
-    font-size: 2em;
-    /* Hebrew in serif fonts is horrific */
-    font-family: 'Zilla Slab', sans-serif;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  text-align: center;
+  padding-top: 10%;
+  font-size: 2em;
+  /* Hebrew in serif fonts is horrific */
+  font-family: 'Zilla Slab', sans-serif;
 }
 
 /* Reduce font size, transition from grid to column on small devices */
-@media all and (max-width: 7in), (min-resolution: 144dpi),
-(-webkit-min-device-pixel-raito: 1.5) {
 
-    /* In essence, changes nothing, but allows sticky footer */
-
-    body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-    footer {
-        margin-top: auto;
-    }
-
-    main {
-      background-position: top;
-      flex-grow: 1;
-    }
-
-    .content {
-        font-size: .8em;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .grid-box {
-      margin-bottom: 1em;
-    }
-
-    .navbar {
-        font-size: 1.5em;
-    }
+@media all and (max-width: 7in), (min-resolution: 144dpi), (-webkit-min-device-pixel-raito: 1.5) {
+  /* In essence, changes nothing, but allows sticky footer */
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  footer {
+    margin-top: auto;
+  }
+  main {
+    background-position: top;
+    flex-grow: 1;
+  }
+  .content {
+    font-size: .8em;
+    display: flex;
+    flex-direction: column;
+  }
+  .grid-box {
+    margin-bottom: 1em;
+  }
+  .navbar {
+    font-size: 1.5em;
+  }
 }

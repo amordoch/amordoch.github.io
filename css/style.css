@@ -226,7 +226,7 @@ as we cannot animate it if display is set to none */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
-  grid-column-gap: 40vw;
+  grid-column-gap: 36vw;
   margin: 0 1em;
   grid-row-gap: 5vh;
 }
@@ -253,11 +253,6 @@ as we cannot animate it if display is set to none */
   padding-right: 2%;
   color: black;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
-}
-
-.grid-box>ul {
-  list-style-position: inside;
-  padding-left: 0;
 }
 
 /* For construction notification */

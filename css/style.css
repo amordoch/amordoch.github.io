@@ -134,6 +134,7 @@ html.no-cssgrid {
 .navbar li:hover {
   background-color: #9fadcb;
   transition: ease .25s;
+  box-shadow: 0 2px 0px -1px #000;
 }
 
 .navbar img {
@@ -145,7 +146,6 @@ html.no-cssgrid {
 }
 
 #github-icon {
-  padding-right: 1em;
   margin-left: 2px;
 }
 

@@ -68,14 +68,17 @@ a:hover, a:focus {
 }
 
 /*** NO GRID ***/
+/* General fix for buggy IE flexbox */
+html.no-cssgrid {
+    display: flex;
+    flex-direction: column;
+}
 
 .no-cssgrid body {
   /* In essence, changes nothing, but allows sticky footer */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  /* How does IE not even support flexbox, a 2011 technology, properly? */
-  height: 0;
 }
 
 .no-cssgrid header {
@@ -99,6 +102,14 @@ a:hover, a:focus {
 
 .no-cssgrid .grid-box {
   margin-bottom: 1em;
+}
+
+.no-cssgrid .grid-span-cols {
+    align-self: center;
+}
+
+.no-cssgrid .content h3 {
+    margin-top: auto;
 }
 
 /*** NAV ***/

@@ -105,11 +105,11 @@ html.no-cssgrid {
 }
 
 .no-cssgrid .grid-span-cols {
-    align-self: center;
+  align-self: center;
 }
 
 .no-cssgrid .content h3 {
-    margin-top: auto;
+  margin-top: auto;
 }
 
 /*** NAV ***/
@@ -328,5 +328,12 @@ footer form, footer p {
   }
   .navbar {
     font-size: 1.5em;
+  }
+  .grid-span-cols {
+    align-self: center;
+  }
+
+  .content h3 {
+    margin-top: auto;
   }
 }

@@ -23,11 +23,6 @@ h1, h2, h3 {
   font-family: 'Lato', sans-serif;
 }
 
-header {
-  background-color: #EAAA00;
-  padding-left: 1em;
-}
-
 main {
   background: no-repeat url("../static/DSC_3174.jpg") top/cover scroll;
   padding-bottom: 1em;
@@ -115,8 +110,10 @@ html.no-cssgrid {
 /*** NAV ***/
 
 .navbar {
+  background-color: #EAAA00;
   font-family: 'Lato', sans-serif;
   font-size: 1.1em;
+  padding: 0 1vw;
 }
 
 .navbar ul {
@@ -138,6 +135,7 @@ html.no-cssgrid {
 .navbar li:hover {
   background-color: #F5D580;
   transition: ease .25s;
+  box-shadow: 0 4px 2px -2px black inset;
 }
 
 .navbar img {
@@ -149,7 +147,6 @@ html.no-cssgrid {
 }
 
 #github-icon {
-  padding-right: 1em;
   margin-left: 2px;
 }
 

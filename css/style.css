@@ -12,7 +12,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 20px;
   margin: auto;
   color: white;
@@ -20,7 +20,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Zilla Slab', serif;
+  font-family: 'Lato', sans-serif;
 }
 
 header {
@@ -104,8 +104,8 @@ a:hover, a:focus {
 /*** NAV ***/
 
 .navbar {
-  font-family: 'Zilla Slab', serif;
-  font-size: 1.25em;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1em;
 }
 
 .navbar ul {

@@ -39,7 +39,7 @@ footer {
   padding-left: 1rem;
 }
 
-footer a, a:visited {
+footer a, footer a:visited {
   color: inherit;
 }
 
@@ -233,16 +233,24 @@ as we cannot animate it if display is set to none */
 
 /* For blocks of content */
 
+.grid-span-cols {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
 .content h1 {
   font-size: 3em;
-  grid-column: 1 / -1;
-  text-align: center;
   margin-top: .5em;
+  margin-bottom: auto;
 }
 
 .content h2 {
-  font-size: 2em;
+  font-size: 1.7em;
   margin-top: auto;
+}
+
+.content h3 {
+  margin-top: -4vh;
 }
 
 .grid-box {

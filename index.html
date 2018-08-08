@@ -142,7 +142,16 @@
       </div>
   </main>
   <footer>
-    <p>Copyright &copy; 2018 Ariel Mordoch. Licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> See link for details.</p>
+    <p>Copyright &copy; 2018 Ariel Mordoch. Licensed under the
+      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> See link for details.</p>
+    <form>
+      <label for="language-select">Language: </label>
+      <select id="language-select" onchange="add_lang_overlay(event, '');">
+        <option value="en">English (en-US)</option>
+        <option value="de">Deutsch (de-DE)</option>
+        <option value="he">Hebrew (he-IL)</option>
+      </select>
+    </form>
   </footer>
 </body>
 

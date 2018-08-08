@@ -277,6 +277,7 @@ footer form, footer p {
 #lang-overlay {
   position: fixed;
   top: 0;
+  z-index: 9999999;
   height: 100%;
   width: 100%;
   background: black;

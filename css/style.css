@@ -135,7 +135,7 @@ html.no-cssgrid {
 .navbar li:hover {
   background-color: #F5D580;
   transition: ease .25s;
-  box-shadow: 0 4px 2px -2px black inset;
+  box-shadow: 0 -4px 2px -2px black inset;
 }
 
 .navbar img {

@@ -88,8 +88,8 @@ a:hover, a:focus {
 
 .no-cssgrid .unsupported-browser {
   display: flex;
-  margin: auto;
   justify-content: center;
+  align-items: center;
 }
 
 .no-cssgrid .content {

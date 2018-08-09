@@ -110,7 +110,7 @@ html.no-cssgrid {
 /*** NAV ***/
 
 .navbar {
-  background-color: #EAAA00;
+  background-color: #EAA000;
   font-family: 'Lato', sans-serif;
   font-size: 1.1em;
   padding: 0 1vw;
@@ -133,9 +133,8 @@ html.no-cssgrid {
 }
 
 .navbar li:hover {
-  background-color: #F5D580;
   transition: ease .25s;
-  box-shadow: 0 -2px 1px -1px black inset;
+  box-shadow: 0 -2px black inset;
 }
 
 .navbar img {
@@ -144,10 +143,6 @@ html.no-cssgrid {
 
 #linkedin {
   margin-left: auto;
-}
-
-#github-icon {
-  margin-left: 2px;
 }
 
 #github-li:hover, #linkedin:hover {

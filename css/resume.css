@@ -1,0 +1,58 @@
+body {
+  background: #FFFEF5;
+  color: black;
+}
+
+main {
+  background: unset;
+}
+
+footer {
+  background: #b2af96;
+}
+
+.container-col {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  align-content: flex-end;
+}
+
+.navbar {
+  background: #B2AF96;
+  color: white;
+}
+
+.navbar a {
+  color: black;
+}
+
+.dropdown ul {
+  background: #b2af96;
+}
+
+.dropdown li:hover, .dropdown li:focus-within {
+  background-color: #F3F0FF;
+}
+
+.content {
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 2vh;
+}
+
+#category-tabs {
+  font-size: 1.2em;
+  list-style: none;
+  padding: 0;
+  font-family: Lato, sans-serif;
+  color: rgba(0, 0, 0, .5);
+}
+
+#category-tabs li:hover {
+  cursor: pointer;
+  color: black;
+}
+
+#category-tabs .slide-active-selection {
+  color: #000;
+}

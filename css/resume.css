@@ -41,6 +41,7 @@ footer {
 }
 
 #category-tabs {
+  margin: 0;
   font-size: 1.2em;
   list-style: none;
   padding: 0;
@@ -63,13 +64,13 @@ footer {
   opacity: 0;
   visibility: hidden;
   transition: .5s;
-  animation: slide-dismiss 1.5s;
+  animation: slide-dismiss 1s;
 }
 
-.slide-active {
+.active-slide {
   opacity: 1;
   visibility: visible;
-  animation: slide-appear 1.5s;
+  animation: slide-appear 1s;
 }
 
 @keyframes slide-dismiss {

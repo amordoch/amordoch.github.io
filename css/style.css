@@ -132,13 +132,17 @@ html.no-cssgrid {
   position: relative;
 }
 
-.navbar li:hover {
+.navbar li:hover, .navbar li:focus-within {
   transition: ease .25s;
   box-shadow: 0 -2px black inset;
 }
 
 .navbar img {
   max-height: 1em;
+}
+
+.nav-bottom-shadow {
+  box-shadow: 0 -2px black inset;
 }
 
 #linkedin {
@@ -172,8 +176,9 @@ as we cannot animate it if display is set to none */
   z-index: 999;
 }
 
-.dropdown li:hover {
+.dropdown li:hover, .dropdown li:focus-within {
   background-color: #F5D580;
+  box-shadow: unset;
 }
 
 .dropdown ul li {

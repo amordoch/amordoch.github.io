@@ -56,3 +56,33 @@ footer {
 #category-tabs .slide-active-selection {
   color: #000;
 }
+
+.slide {
+  position: relative;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
+  animation: slide-dismiss 1.5s;
+}
+
+.slide-active {
+  opacity: 1;
+  visibility: visible;
+  animation: slide-appear 1.5s;
+}
+
+@keyframes slide-dismiss {
+  100% {
+    left: 10%;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes slide-appear {
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}

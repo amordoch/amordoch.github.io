@@ -64,16 +64,31 @@
         <div class="g-recaptcha" data-sitekey="6LdUbGYUAAAAABweMCOU_dfKXnAJgE8G2eQ4Cja_" data-callback="handle_captcha"></div>
         <script type="text/javascript">
           function handle_captcha(response) {
-            fetch('https://amordoch.github.io/hidden.json').then(
-              response => response.json()
-            ).then( function(eml) {
-              encrypted = eml.email;
-              var decoded = '';
-              for(let i = 0; i < encrypted.length; i++) {
-                decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
-              }
-              window.location.assign("mailto:" + decoded);
+            if(fetch) {
+              fetch('https://amordoch.github.io/hidden.json').then(
+                response => response.json()
+              ).then( function(eml) {
+                encrypted = eml.email;
+                let decoded = '';
+                for(let i = 0; i < encrypted.length; i++) {
+                  decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
+                }
+                window.location.assign("mailto:" + decoded);
             });
+            } else {
+              eml = new XMLHttpRequest();
+              eml.open('GET', 'https://amordoch.github.io/hidden.json');
+              eml.responseType = 'json';
+              eml.onload = function(e) {
+                encrypted = this.response.email;
+                let decoded = '';
+                for(let i = 0; i < encrypted.length; i++) {
+                  decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
+                }
+                window.location.assign("mailto:" + decoded);
+              }
+              eml.send();
+            }
           }
         </script>
       </div>

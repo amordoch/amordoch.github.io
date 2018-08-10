@@ -59,29 +59,35 @@ footer {
 }
 
 .slide {
-  position: relative;
-  left: 0;
   opacity: 0;
-  visibility: hidden;
-  transition: .5s;
+  visibility: collapse;
   animation: slide-dismiss 1s;
 }
 
 .active-slide {
-  opacity: 1;
-  visibility: visible;
   animation: slide-appear 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes slide-dismiss {
+  0% {
+    margin-left: 0;
+    opacity: 1;
+    visibility: visible;
+  }
   100% {
-    left: 10%;
+    margin-left: 10%;
     opacity: 0;
-    visibility: hidden;
+    visibility: collapse;
   }
 }
 
 @keyframes slide-appear {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
   100% {
     opacity: 1;
     visibility: visible;

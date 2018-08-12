@@ -15,7 +15,6 @@ footer {
   display: flex;
   flex-direction: column;
   flex: auto;
-  align-content: flex-end;
 }
 
 .navbar {
@@ -58,10 +57,17 @@ footer {
   color: #000;
 }
 
+.slider {
+  position: relative;
+}
+
 .slide {
   opacity: 0;
   visibility: collapse;
   animation: slide-dismiss 1s;
+  /* Chrome does not treat visibility: collapse; properly for a flex item yet */
+  position: absolute;
+  top: 0;
 }
 
 .active-slide {

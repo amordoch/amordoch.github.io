@@ -1,10 +1,12 @@
 body {
   background: #FFFEF5;
   color: black;
+  height: 100vh; /* Define a height so we can limit the grid */
 }
 
 main {
   background: unset;
+  min-height: 0; /* Override grid default of auto height grid items */
 }
 
 footer {
@@ -36,7 +38,9 @@ footer {
 
 .content {
   grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
   grid-column-gap: 2vh;
+  height: 100%; /* Define a height so grid items can shrink */
 }
 
 #category-tabs {
@@ -59,6 +63,7 @@ footer {
 
 .slider {
   position: relative;
+  overflow-y: scroll;
 }
 
 .slide {
@@ -68,6 +73,10 @@ footer {
   /* Chrome does not treat visibility: collapse; properly for a flex item yet */
   position: absolute;
   top: 0;
+}
+
+.slide *:first-child {
+  margin-top: 0;
 }
 
 .active-slide {

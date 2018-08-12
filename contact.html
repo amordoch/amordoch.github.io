@@ -26,7 +26,7 @@
 
 <body>
   <header>
-    <div class="unsupported-browser"><p><strong>Warning: Your browser is not supported. This site may not function correctly.</strong></p></div>
+    <div class="unsupported-browser"><p><strong>Warning: Your browser is not supported. This site will not function correctly. Please download the latest version of <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox,</a> <a href="https://www.google.com/chrome/">Chrome,</a> or <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge.</a></strong></p></div>
     <nav class="navbar">
       <ul class="container">
         <li><a href="./index.html">home</a></li>
@@ -64,16 +64,31 @@
         <div class="g-recaptcha" data-sitekey="6LdUbGYUAAAAABweMCOU_dfKXnAJgE8G2eQ4Cja_" data-callback="handle_captcha"></div>
         <script type="text/javascript">
           function handle_captcha(response) {
-            fetch('https://amordoch.github.io/hidden.json').then(
-              response => response.json()
-            ).then( function(eml) {
-              encrypted = eml.email;
-              var decoded = '';
-              for(let i = 0; i < encrypted.length; i++) {
-                decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
-              }
-              window.location.assign("mailto:" + decoded);
+            if(fetch) {
+              fetch('https://amordoch.github.io/hidden.json').then(
+                response => response.json()
+              ).then( function(eml) {
+                encrypted = eml.email;
+                let decoded = '';
+                for(let i = 0; i < encrypted.length; i++) {
+                  decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
+                }
+                window.location.assign("mailto:" + decoded);
             });
+            } else {
+              eml = new XMLHttpRequest();
+              eml.open('GET', 'https://amordoch.github.io/hidden.json');
+              eml.responseType = 'json';
+              eml.onload = function(e) {
+                encrypted = this.response.email;
+                let decoded = '';
+                for(let i = 0; i < encrypted.length; i++) {
+                  decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
+                }
+                window.location.assign("mailto:" + decoded);
+              }
+              eml.send();
+            }
           }
         </script>
       </div>

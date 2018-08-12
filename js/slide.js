@@ -1,7 +1,8 @@
-let slide_selections = document.getElementById('category-tabs').children;
+// Use an Array here because HTMLCollections aren't iteratable in Edge
+let slide_selections = Array.from(document.getElementById('category-tabs').children);
 let slide_active_selection = document.getElementsByClassName('slide-active-selection')[0];
 let active_slide = document.getElementsByClassName('active-slide')[0];
-/* temporarily remove active-slide-nav class on hover, focus, and click */
+// temporarily remove active-slide-nav class on hover, focus, and click
 for(let selection of slide_selections) {
   selection.onmouseover = selection.onfocus = function () {
     slide_active_selection.classList.remove('slide-active-selection');

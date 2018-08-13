@@ -61,6 +61,10 @@ footer {
   color: #000;
 }
 
+.daterange {
+  float: right;
+}
+
 .slider {
   position: relative;
   overflow-y: scroll;

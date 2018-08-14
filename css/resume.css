@@ -121,18 +121,35 @@ footer {
   }
 }
 
+#skills {
+  display: grid;
+  grid-template: auto / repeat(3, 1fr);
+  grid-gap: 1em;
+}
+
+#skills h4 {
+  font-size: 1em;
+  border-bottom: 1px solid black;
+}
+
+@media (max-width: 10in), (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 1.5) {
+  #skills {
+    display: block;
+  }
+}
+
 @media all and (max-width: 7in), (min-resolution: 144dpi), (-webkit-min-device-pixel-raito: 1.5) {
-  
+
   body {
     height: unset;
   }
-  
+
   #category-tabs {
     margin-bottom: 1em;
   }
-  
+
   .slider {
     min-height: 30vh;
   }
-  
+
 }

@@ -6,7 +6,7 @@ body {
 
 main {
   background: unset;
-  min-height: 0; /* Override grid default of auto height grid items */
+  /*! height: 100vh; */ /* Override grid default of auto height grid items */
 }
 
 footer {
@@ -17,6 +17,10 @@ footer {
   display: flex;
   flex-direction: column;
   flex: auto;
+}
+
+.indent1 {
+  margin-left: 1em;
 }
 
 .navbar {
@@ -41,6 +45,7 @@ footer {
   grid-template-rows: auto 1fr;
   grid-column-gap: 2vh;
   height: 100%; /* Define a height so grid items can shrink */
+  /*! justify-content: flex-start; */
 }
 
 #category-tabs {
@@ -50,6 +55,7 @@ footer {
   padding: 0;
   font-family: Lato, sans-serif;
   color: rgba(0, 0, 0, .5);
+  /*! margin-bottom: 0; */
 }
 
 #category-tabs li:hover {
@@ -68,12 +74,14 @@ footer {
 .slider {
   position: relative;
   overflow-y: scroll;
+  /*! min-height: 35vh; */
 }
 
 .slide {
   opacity: 0;
   visibility: collapse;
   animation: slide-dismiss 1s;
+  margin: 0 1%;
   /* Chrome does not treat visibility: collapse; properly for a flex item yet */
   position: absolute;
   top: 0;
@@ -111,4 +119,20 @@ footer {
     opacity: 1;
     visibility: visible;
   }
+}
+
+@media all and (max-width: 7in), (min-resolution: 144dpi), (-webkit-min-device-pixel-raito: 1.5) {
+  
+  body {
+    height: unset;
+  }
+  
+  #category-tabs {
+    margin-bottom: 1em;
+  }
+  
+  .slider {
+    min-height: 30vh;
+  }
+  
 }

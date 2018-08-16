@@ -74,6 +74,7 @@ footer {
 .slider {
   position: relative;
   overflow-y: scroll;
+  overflow-x: hidden;
   /*! min-height: 35vh; */
 }
 

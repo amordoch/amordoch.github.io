@@ -53,14 +53,18 @@ footer {
   font-size: 1.2em;
   list-style: none;
   padding: 0;
-  font-family: Lato, sans-serif;
-  color: rgba(0, 0, 0, .5);
-  /*! margin-bottom: 0; */
 }
 
-#category-tabs li:hover {
-  cursor: pointer;
+#category-tabs button {
+  all: unset;
+  font-family: 'Lato', sans-serif;
+  color: rgba(0, 0, 0, .5);
+}
+
+#category-tabs button:hover, #category-tabs button:focus {
   color: black;
+  transform: scale(.95);
+  transition: transform 100ms linear;
 }
 
 #category-tabs .slide-active-selection {

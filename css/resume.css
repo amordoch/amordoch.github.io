@@ -75,7 +75,6 @@ footer {
   position: relative;
   overflow-y: scroll;
   overflow-x: hidden;
-  /*! min-height: 35vh; */
 }
 
 .slide {
@@ -88,7 +87,7 @@ footer {
   top: 0;
 }
 
-.slide *:first-child {
+.slide > *:first-child {
   margin-top: 0;
 }
 
@@ -100,12 +99,12 @@ footer {
 
 @keyframes slide-dismiss {
   0% {
-    margin-left: 0;
+    left: 0;
     opacity: 1;
     visibility: visible;
   }
   100% {
-    margin-left: 10%;
+    left: 5%;
     opacity: 0;
     visibility: collapse;
   }

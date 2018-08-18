@@ -139,6 +139,10 @@ footer {
   border-bottom: 1px solid black;
 }
 
+#lang-overlay {
+  color: white;
+}
+
 @media (max-width: 10in), (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 1.5) {
   #skills {
     display: block;

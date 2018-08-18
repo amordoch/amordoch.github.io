@@ -18,7 +18,16 @@ for(let selection of slide_selections) {
     // active-slide change
     let new_slide = document.getElementById(event.target.innerHTML);
     active_slide.classList.remove('active-slide');
+    // Animate transition - only needs to be added on the first change to work for all changes
+    active_slide.classList.add('slide-anim-dismiss');
     active_slide = new_slide;
     active_slide.classList.add('active-slide');
   };
+}
+/* Change to proper slide if page is reloaded */
+window.onhashchange = function (event) {
+  hash = event.newURL.replace('#', '');
+  let new_slide = document.getElementById(hash);
+  slide_active_selection.classList.remove('slide-active-selection');
+  document.getElementById(hash).classList.add('slide-active-selection');
 }

@@ -84,11 +84,14 @@ footer {
 .slide {
   opacity: 0;
   visibility: collapse;
-  animation: slide-dismiss 1s;
   margin: 0 1%;
   /* Chrome does not treat visibility: collapse; properly for a flex item yet */
   position: absolute;
   top: 0;
+}
+
+.slide-anim-dismiss {
+  animation: slide-dismiss 1s;
 }
 
 .slide > *:first-child {

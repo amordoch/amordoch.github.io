@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Ariel Mordoch">
+  <meta name="description" content="The personal website of Ariel Mordoch.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ariel Mordoch</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
+  <link rel="stylesheet" href="static/flags/css/flag-icon.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122941823-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-122941823-1');
+  </script>
+  <!-- Overlay script for non-english languages -->
+  <script src="./js/construction_overlay.js" charset="utf-8"></script>
+  <script async type="text/javascript">
+  /*! modernizr 3.6.0 (Custom Build) | MIT *
+  * https://modernizr.com/download/?-cssgrid_cssgridlegacy-setclasses !*/
+  !function(e,n,t){function r(e,n){return typeof e===n}function o(){var e,n,t,o,s,i,l;for(var a in w)if(w.hasOwnProperty(a)){if(e=[],n=w[a],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(o=r(n.fn,"function")?n.fn():n.fn,s=0;s<e.length;s++)i=e[s],l=i.split("."),1===l.length?Modernizr[l[0]]=o:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=o),C.push((o?"":"no-")+l.join("-"))}}function s(e){var n=_.className,t=Modernizr._config.classPrefix||"";if(x&&(n=n.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(r,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),x?_.className.baseVal=n:_.className=n)}function i(e,n){return function(){return e.apply(n,arguments)}}function l(e,n,t){var o;for(var s in e)if(e[s]in n)return t===!1?e[s]:(o=n[e[s]],r(o,"function")?i(o,t||n):o);return!1}function a(e,n){return!!~(""+e).indexOf(n)}function u(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):x?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function f(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function c(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function d(n,t,r){var o;if("getComputedStyle"in e){o=getComputedStyle.call(e,n,t);var s=e.console;if(null!==o)r&&(o=o.getPropertyValue(r));else if(s){var i=s.error?"error":"log";s[i].call(s,"getComputedStyle returning null, its possible modernizr test results are inaccurate")}}else o=!t&&n.currentStyle&&n.currentStyle[r];return o}function p(){var e=n.body;return e||(e=u(x?"svg":"body"),e.fake=!0),e}function m(e,t,r,o){var s,i,l,a,f="modernizr",c=u("div"),d=p();if(parseInt(r,10))for(;r--;)l=u("div"),l.id=o?o[r]:f+(r+1),c.appendChild(l);return s=u("style"),s.type="text/css",s.id="s"+f,(d.fake?d:c).appendChild(s),d.appendChild(c),s.styleSheet?s.styleSheet.cssText=e:s.appendChild(n.createTextNode(e)),c.id=f,d.fake&&(d.style.background="",d.style.overflow="hidden",a=_.style.overflow,_.style.overflow="hidden",_.appendChild(d)),i=t(c,e),d.fake?(d.parentNode.removeChild(d),_.style.overflow=a,_.offsetHeight):c.parentNode.removeChild(c),!!i}function g(n,r){var o=n.length;if("CSS"in e&&"supports"in e.CSS){for(;o--;)if(e.CSS.supports(c(n[o]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var s=[];o--;)s.push("("+c(n[o])+":"+r+")");return s=s.join(" or "),m("@supports ("+s+") { #modernizr { position: absolute; } }",function(e){return"absolute"==d(e,null,"position")})}return t}function y(e,n,o,s){function i(){c&&(delete N.style,delete N.modElem)}if(s=r(s,"undefined")?!1:s,!r(o,"undefined")){var l=g(e,o);if(!r(l,"undefined"))return l}for(var c,d,p,m,y,v=["modernizr","tspan","samp"];!N.style&&v.length;)c=!0,N.modElem=u(v.shift()),N.style=N.modElem.style;for(p=e.length,d=0;p>d;d++)if(m=e[d],y=N.style[m],a(m,"-")&&(m=f(m)),N.style[m]!==t){if(s||r(o,"undefined"))return i(),"pfx"==n?m:!0;try{N.style[m]=o}catch(h){}if(N.style[m]!=y)return i(),"pfx"==n?m:!0}return i(),!1}function v(e,n,t,o,s){var i=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+P.join(i+" ")+i).split(" ");return r(n,"string")||r(n,"undefined")?y(a,n,o,s):(a=(e+" "+z.join(i+" ")+i).split(" "),l(a,n,t))}function h(e,n,r){return v(e,t,t,n,r)}var C=[],w=[],S={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){w.push({name:e,fn:n,options:t})},addAsyncTest:function(e){w.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=S,Modernizr=new Modernizr;var _=n.documentElement,x="svg"===_.nodeName.toLowerCase(),b="Moz O ms Webkit",P=S._config.usePrefixes?b.split(" "):[];S._cssomPrefixes=P;var z=S._config.usePrefixes?b.toLowerCase().split(" "):[];S._domPrefixes=z;var E={elem:u("modernizr")};Modernizr._q.push(function(){delete E.elem});var N={style:E.elem.style};Modernizr._q.unshift(function(){delete N.style}),S.testAllProps=v,S.testAllProps=h,Modernizr.addTest("cssgridlegacy",h("grid-columns","10px",!0)),Modernizr.addTest("cssgrid",h("grid-template-rows","none",!0)),o(),s(C),delete S.addTest,delete S.addAsyncTest;for(var T=0;T<Modernizr._q.length;T++)Modernizr._q[T]();e.Modernizr=Modernizr}(window,document);
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="unsupported-browser"><p><strong>Achtung: Dein Webbrowser ist nicht unterstützt. Diese Seite wird falsch funktionieren. Bitte unterladen Sie die neuste Version von <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox,</a> <a href="https://www.google.com/chrome/">Chrome,</a> oder <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge.</a></strong></p></div>
+      <nav class="navbar">
+          <ul class="container">
+              <li><a href="index.html">home</a></li>
+              <li><a href="resume.html">resume</a></li>
+              <li><a href="contact.html">contact</a></li>
+              <li class="dropdown">
+                <img src="static/lang-icon.png" alt="Langauges">
+                <ul>
+                    <li><a href="#en" onclick="rm_lang_overlay(event);"><span class="flag-icon flag-icon-gb-eng"></span></a></li>
+                    <li><a href="#he" onclick="add_lang_overlay(event, 'he');"><span class="flag-icon flag-icon-il"></span></a></li>
+                    <li><a href="#de" onclick="add_lang_overlay(event, 'de');"><span class="flag-icon flag-icon-de"></span></a></li>
+                </ul>
+              </li>
+              <li id="linkedin">
+                  <a href="http://www.linkedin.com/in/ariel-mordoch-7b9950139" target="_blank">
+                    <img src="static/In-2C-28px-R.png" alt="My LinkedIn">
+                  </a>
+              </li>
+              <li id="github-li">
+                <a href="https://github.com/amordoch" target="_blank">
+                  <img id="github-icon" src="static/gh-icon.png" alt="Ariel's Github">
+                </a>
+              </li>
+          </ul>
+      </nav>
+  </header>
+  <main>
+      <div class="content">
+          <h1 class="grid-span-cols">ariel mordoch</h1>
+          <h3 class="grid-span-cols">ingenieur, pilot, programmierer</h3>
+          <div class="grid-box">
+              <h2>über mich</h2>
+              <p>Hallo, Ich bin Ariel Mordoch. Ich studiere Luft-und-Raumfahrttechnick an der Georgia Institute of Technology und
+                ich habe vor Kurzem mein ersten Co-Op-Runde beim Honda Aircraft Company. Ich bin
+                in Tel Aviv, Israel geboren und nach Atlanta, Georgia umgezogen, als ich
+                4 jahre Alt war. Ich bin einen aktuellen Brüder von die Bruderschaft Alpha Epsilon Pi und ein Mitglieder 
+                von der Raumfahrtsehrengesellschaft Sigma Gamma Tau. I habe auch eine FAA-Privatpilotlizenz und
+                spreche fließend Englisch und Hebräisch, Deutsch bei der Höhe B1, und
+                Französisch bei der Höhe A1.</p>
+          </div>
+          <div class="grid-box">
+              <h2>berufserfahrung</h2>
+              <p><strong>Honda Aircraft Company</strong>, MRB Systeme Co-Op, Greensboro, NC<br /><em>(Mai 2018 - August 2018)</em></p>
+              <ul>
+                  <li>Beim Honda, Ich habe einen neuen Teil für Designverbesserung konzipiert und eine Toleranzanalyse vom bestehenden Design gemacht.
+                    I habe auch  MATLAB/Python Software geschrieben, um einen Bericht zu machen, der nennt Teile mit viele Fehlern.
+                    Während dieses Vorgangs, I habe mit Designingenieurs zusammengearbeitet, um Design-Änderungs-Anfrage zu schließen und Teilfehlerrate zu reduzieren.</li>
+              </ul>
+          </div>
+          <div class="grid-box">
+              <h2>hobbies & interests</h2>
+              <ul>
+                <li><strong>My favorite thing to do is flying.</strong> I love being
+                  behind the controls of an airplane. I generally fly
+                  Piper Cherokees.
+                </li>
+                <li><strong>I've been following and playing soccer since the World Cup in 2014.</strong>
+                  I'm a fan of the german team Borussia Dortmund (and Atlanta United, too). Heja BVB!
+                </li>
+                <li><strong>I also enjoy gaming</strong>. You can usually find me playing KSP,
+                  Witcher 3, Rocket League, ...and FIFA (of course).
+                </li>
+                <li><strong>Programming.</strong> My history with programming stretches back to
+                  my early days in high school. I very much enjoy coding and translating concepts
+                  I learn in class into code. In fact, the majority of my college application were
+                  actually for CS. Over the years, I have done a couple projects which
+                  were generally applications of knowledge I gleaned during my courses.
+                  You can take a peek at <a href="https://github.com/amordoch">my Github.</a>
+                </li>
+                <li><strong>Photography and graphic design have also historically been subjects I'm very interested in.</strong>
+                  Give me a DSLR and I'll be occupied for days on end. I might put up some of my shots here in the future.
+                  As for graphic design: modern, minimalist design has always piqued my interest, and in nearly every project
+                  I've done which involves some graphic, I've used some aspect of minimalism. Of all its aspects, though,
+                  I'm probably the most partial to modern typography. You can make nearly anything look great with good fonts.
+                  I've tried to reflect both these intersts by keeping it simple with the design of this site.
+                </li>
+              </ul>
+          </div>
+          <div class="grid-box">
+            <h2>projects</h2>
+              <h4>This Website</h4>
+              <ul>
+                <li>This portfolio-style website, coded completely from scratch. No
+                bootstrap, no jQuery, no frameworks. The &quot;hard&quot; way.</li>
+              </ul>
+              <h4>Student Goverment Association (SGA)</h4>
+              <ul>
+                <li><a href="https://united.gatech.edu">united.gatech.edu</a> Website Redesign
+                  <ul>
+                    <li>For this project, I lead a team of 4 in redesigning Georgia Tech’s United
+                      website (the campus portal for mental health and
+                      related issues) in the style of other GT websites.</li>
+                    <li>Throughout, I collaborated with the GT Mental Health Student Coalition,
+                      organized weekly meetings with team members, worked directly on
+                      and oversaw progress on the project.</li>
+                  </ul>
+                </li>
+                <li>SGA Website Refresh Project
+                  <ul>
+                    <li>I collaboratively rebuilt the SGA graduate and
+                      undergraduate website from the ground up using Drupal and attended weekly meetings to discuss progress and resolve technical issues.</li>
+                  </ul>
+                </li>
+              </ul>
+          </div>
+      </div>
+      <div id="lang-overlay" class="hide">
+          <p></p>
+          <a href="#en" onclick="rm_lang_overlay(event)">
+	    	    <span class="flag-icon flag-icon-gb-eng"></span>
+	        </a>
+      </div>
+  </main>
+  <footer>
+    <p>Copyright &copy; 2018 Ariel Mordoch. Licensed under the
+      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> See link for details.</p>
+    <form>
+      <label for="language-select">Language: </label>
+      <select id="language-select" onchange="add_lang_overlay(event, '');">
+        <option value="en">English (en-US)</option>
+        <option value="he">עברית (he-IL)</option>
+        <option value="de">Deutsch (de-DE)</option>
+      </select>
+    </form>
+  </footer>
+  <script src="js/active_page.js"></script>
+</body>
+</html>

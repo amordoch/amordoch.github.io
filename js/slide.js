@@ -16,7 +16,7 @@ for(let selection of slide_selections) {
     event.target.classList.add('slide-active-selection');
     slide_active_selection = event.target;
     // active-slide change
-    let new_slide = document.getElementById(event.target.innerHTML);
+    let new_slide = document.getElementById(event.target.value);
     active_slide.classList.remove('active-slide');
     // Animate transition - only needs to be added on the first change to work for all changes
     active_slide.classList.add('slide-anim-dismiss');

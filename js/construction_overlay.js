@@ -16,6 +16,8 @@ function add_lang_overlay(event, which) {
 Während des Aufbaus, bitte benutzen Sie die englische Seite. Dankeschön!';
   } else if (which === 'he') {
     overlay.children[0].innerHTML = '\u202eתרגום האתר לא מוחן. נא להשתמש בגירסה האנגלית. תודה\u202e';
+  } else if (which == 'es') {
+    overlay.children[0].innerHTML = 'El sitio español se está construyendo. Por favor usa el sitio ingles.'
   } else {
     overlay.children[0].innerHTML = 'Looks like something went wrong. Please click the \
 flag below to return to the previous page.';

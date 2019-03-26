@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 
 <head>
   <meta charset="utf-8">
@@ -11,7 +11,8 @@
   <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
   <link rel="stylesheet" href="../static/flags/css/flag-icon.css">
   <link rel="stylesheet" href="../css/style.css">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <link rel="stylesheet" href="../css/home.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122941823-1"></script>
   <script>
   window.dataLayer = window.dataLayer || [];
@@ -31,14 +32,15 @@
 
 <body>
   <header>
-    <div class="unsupported-browser"><p><strong>Achtung: Dein Webbrowser ist nicht unterstützt. Diese Seite wird falsch funktionieren. Bitte unterladen Sie die neuste Version von <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox,</a> <a href="https://www.google.com/chrome/">Chrome,</a> oder <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge.</a></strong></p></div>    <div class="unsupported-browser"><p><strong>Warning: Your browser is not supported. This site will not function correctly. Please download the latest version of <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox,</a> <a href="https://www.google.com/chrome/">Chrome,</a> or <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge.</a></strong></p></div>
+    <div class="unsupported-browser"><p><strong>Cuidado: Su navegador de internet es sin apoyo. Este sitio web no funcionara correctamente. Por favor, consiga la última versión de <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox,</a> <a href="https://www.google.com/chrome/">Chrome,</a> o <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge.</a></strong></p></div>
+    </div>
     <nav class="navbar">
       <ul class="container">
-        <li><a href="./index.html">hauptseite</a></li>
-        <li><a href="resume.html">resume</a></li>
-        <li><a href="contact.html">kontakt</a></li>
+        <li><a href="index.html">inicio</a></li>
+        <li><a href="resume.html">curriculum</a></li>
+        <li><a href="contact.html">contacto</a></li>
         <li class="dropdown">
-          <img src="../static/lang-icon.png" alt="Sprachen">
+          <img src="../static/lang-icon.png" alt="Linguas">
           <ul>
             <li><a href="#en" onclick="rm_lang_overlay(event);"><span class="flag-icon flag-icon-gb-eng"></span></a></li>
             <li><a href="#he" onclick="add_lang_overlay(event, 'he');"><span class="flag-icon flag-icon-il"></span></a></li>
@@ -60,61 +62,93 @@
     </nav>
   </header>
   <main>
-    <div class="content">
-      <h1 class="grid-span-cols">kontakt</h1>
-      <div class="grid-box">
-        <h2>email</h2>
-        <p>Um mich von Spam-mail zu verteidigen, werde ich meine Emailaddresse nicht abgeben.
-        Wenn Sie mich kontaktieren möchten, überprüfen Sie sich mal herunter, schicken Sie
-        deine Nachricht, und ich werde Sie so bald wie möglich kontaktieren</p>
-        <div class="g-recaptcha" data-sitekey="6LdUbGYUAAAAABweMCOU_dfKXnAJgE8G2eQ4Cja_" data-callback="handle_captcha"></div>
-        <script type="text/javascript">
-          function handle_captcha(response) {
-            if(fetch) {
-              fetch('https://amordoch.github.io/hidden.json').then(
-                response => response.json()
-              ).then( function(eml) {
-                encrypted = eml.email;
-                let decoded = '';
-                for(let i = 0; i < encrypted.length; i++) {
-                  decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
-                }
-                window.location.assign("mailto:" + decoded);
-            });
-            } else {
-              eml = new XMLHttpRequest();
-              eml.open('GET', 'https://amordoch.github.io/hidden.json');
-              eml.responseType = 'json';
-              eml.onload = function(e) {
-                encrypted = this.response.email;
-                let decoded = '';
-                for(let i = 0; i < encrypted.length; i++) {
-                  decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
-                }
-                window.location.assign("mailto:" + decoded);
-              }
-              eml.send();
-            }
-          }
-        </script>
+      <div class="content">
+          <h1 class="grid-span-cols">ariel mordoch</h1>
+          <h3 class="grid-span-cols">ingeniro, piloto, programador</h3>
+          <div class="grid-box">
+              <h2>sobre mi</h2>
+              <p>¡Hola! Yo soy Ariel Mordoch. Estudio ingeniería aersoespacial al Georgia Institute of Technology y
+                he terminado recientemente mi primera semestre de Co-Op-al Honda Aircraft Company. Yo nací
+                en Tel Aviv, Israel y me cambié a Atlanta, Georgia, cuando tenía 4 años. Yo soy un hermano actual
+                de la fraternidad Alpha Epsilon Pi y un miembro de la sociedad de honor aersoespacial Sigma Gamma Tau. 
+                Tengo también una licencia pilota y hablo ingles y hebreo con fluidez, alemán con B1, y español con A2.</p>
+          </div>
+          <div class="grid-box">
+              <h2>experiencia profesional</h2>
+              <p><strong>Honda Aircraft Company</strong>, MRB Sistemas Co-Op, Greensboro, NC<br /><em>(mayo 2018 - augusto 2018)</em></p>
+              <ul>
+                  <li>En Honda, diseñé una nueva pieza para mejorar el diseño y hice una análisis de las tolerancia de la diseño
+                    actual. También escribí software de MATLAB y Python que dio a conocer las piezas con muchas faltas para hacer un informe.
+                    Durante este proyecto trabajé con los ingenieros de diseño para cerrar solicitudes de cambiar de diseñno y
+                    reducir la velocidad de faltas de las piezas.</li>
+              </ul>
+          </div>
+          <div class="grid-box">
+              <h2>hobbys & interessen</h2>
+              <ul>
+                <li><strong>Mein lieblingsaktivität ist Fliegen.</strong> Ich liebe, mit einem Flugzueg in den Wolken zu sein. 
+                  Normalerweise pilote ich Piper Cherokees.
+                </li>
+                <li><strong>Seit der WM 2014 habe ich Fußball gefolgt und gespielt.</strong>
+                  Ich bin ein Fan vom BVB (und der MLS-Verein Atlanta United). Auf geht´s, Borussia!
+                </li>
+                <li><strong>Ich genieße auch das Spielen.</strong> Sie können mich normalerweise spielend KSP,
+                  Witcher 3, Rocket League, ...und FIFA (natürlich) finden.
+                </li>
+                <li><strong>Programmieren.</strong> Meine Geschischte mit Programmieren geht auf
+                  meinen frühen Tagen in der Hochschule zurück. Ich programmiere und übersetze gerne Konzepte in Kode,
+                  die ich in der Klasse lerne. Und zwar, die meisten von meinen Universitätsanträgen waren
+                  auf Informatik. Während den Jahren habe ich ein paar Projekte gemacht, die
+                  normalerweise Anträge von der Kenntniss, die ich in meinen Klassen gelernt habe, waren.
+                  Sie können die Projekte auf <a href="https://github.com/amordoch">meinem Github</a> ansehen.
+                </li>
+                <li><strong>Photographie und Graphic-Design wurden auch geschichtlich Fächer gewesen, die ich dafür sehr interresiert bin.</strong>
+                  Geben Sie mir eine DSLR und ich werde endlos bestezt. Viellecht lade ich irgendwann heir ein paar Bilde hoch.
+                  Für Graphic-Design: modernes, minimalistisches Design hat mich immer interresiert und fast in jedem Projekt,
+                  das ich gemacht habe, habe ich Minimalismus genutzt. Aber vor allem mag ich moderne Typographie. Man kann mit guten Fonts fast alles gutaussiehend machen.
+                  Ich habe versucht, diese Interessen durch einfaches Design zu nutzen. 
+                </li>
+              </ul>
+          </div>
+          <div class="grid-box">
+            <h2>projekte</h2>
+              <h4>Diese Webseite</h4>
+              <ul>
+                <li>Diese Webseite, die ich aus nichts gemacht habe. Kein
+                Bootstrap, jQuery, oder Frameworks. Der &quot;schwere&quot; Weg.</li>
+              </ul>
+              <h4>Student Goverment Association (SGA)</h4>
+              <ul>
+                <li><a href="https://united.gatech.edu">united.gatech.edu</a> Webseite Neuplannung
+                  <ul>
+                    <li>Für dieses Projekt habe ich eine Mannschaft von 4 geführt, um Georgia Techs United-Webseite 
+                      (der Ort für psychische Gesundheit und andere ähnliche Probleme) mit dem Art von den anderen Georgia Tech Webseiten neu zu gestalten.</li>
+                    <li>Während des Projektes habe ich mit dem GT Mental Health Student Coalition zusammengearbeitet,
+                      wöchentliche Treffen organisiert, und das Projekt überwacht.</li>
+                  </ul>
+                </li>
+                <li>SGA Webseite Auffrischen
+                  <ul>
+                    <li>Ich habe behilflich die SGA Graduate-Webseite wiederaufgebaut und die
+                      Undergraduate-Webseite mit Drupal aufgebaut. Ich bin auch auf wöchentlichem Treffen gegangen, um den Fortschrifft zu analysieren und technische Probleme
+                      zu lösen.</li>
+                  </ul>
+                </li>
+              </ul>
+          </div>
       </div>
-      <div class="grid-box">
-        <h2>telefonnummer</h2>
-        <p>Sie können mich an <a href="tel:+14045934361">+1 404-593-4361.</a> erreichen.</p>
+      <div id="lang-overlay" class="hide">
+          <p></p>
+          <a href="#en" onclick="rm_lang_overlay(event)">
+	    	    <span class="flag-icon flag-icon-gb-eng"></span>
+	        </a>
       </div>
-    </div>
-    <div id="lang-overlay" class="hide">
-      <p></p>
-      <a href="#en" onclick="rm_lang_overlay(event)">
-        <span class="flag-icon flag-icon-gb-eng"></span>
-      </a>
-    </div>
   </main>
   <footer>
-    <p>Copyright &copy; 2018 Ariel Mordoch. Lizenziert unter den
-      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> Sehen Sie den Link für die Hinweise.</p>
+    <p>Copyright &copy; 2018 Ariel Mordoch. Autorizaba por el
+      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> Siga el enlace para los detalles.</p>
     <form>
-      <label for="language-select">Language: </label>
+      <label for="language-select">Lingua: </label>
       <select id="language-select" onchange="add_lang_overlay(event, '');">
         <option value="en">English (en-US)</option>
         <option value="he">עברית (he-IL)</option>
@@ -125,5 +159,4 @@
   </footer>
   <script src="../js/active_page.js"></script>
 </body>
-
 </html>

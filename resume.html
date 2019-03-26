@@ -32,9 +32,10 @@
         <li class="dropdown">
           <img src="./static/lang-icon.png" alt="Languages">
           <ul>
-            <li><a href="#en" onclick="rm_lang_overlay(event);"><span class="flag-icon flag-icon-gb-eng"></span></a></li>
-            <li><a href="#he" onclick="add_lang_overlay(event, 'he');"><span class="flag-icon flag-icon-il"></span></a></li>
-            <li><a href="#de" onclick="add_lang_overlay(event, 'de');"><span class="flag-icon flag-icon-de"></span></a></li>
+              <li><a href="#en" onclick="rm_lang_overlay(event);"><span class="flag-icon flag-icon-gb-eng"></span></a></li>
+              <li><a href="#he" onclick="add_lang_overlay(event, 'he');"><span class="flag-icon flag-icon-il"></span></a></li>
+              <li><a href="#de" onclick="add_lang_overlay(event, 'de');"><span class="flag-icon flag-icon-de"></span></a></li>
+              <li><a href="#es" onclick="add_lang_overlay(event, 'es');"><span class="flag-icon flag-icon-es"></span></a></li>
           </ul>
         </li>
         <li id="linkedin">
@@ -54,11 +55,11 @@
     <div class="content">
       <h1 class="grid-span-cols">resume</h1>
       <ul id="category-tabs" class="container-col">
-        <li><button class="slide-active-selection">education</button></li>
-        <li><button>experience</button></li>
-        <li><button>projects/research</button></li>
-        <li><button>skills</button></li>
-        <li><button>leadership</button></li>
+        <li><button class="slide-active-selection" value="education">education</button></li>
+        <li><button value="experience">experience</button></li>
+        <li><button value="research">projects/research</button></li>
+        <li><button value="skills">skills</button></li>
+        <li><button value="leadership">leadership</button></li>
       </ul>
       <div class="slider container-col">
         <section id="education" class="slide active-slide">
@@ -87,7 +88,7 @@
             <li>Collaborated with design engineers to close design change requests and adress part failure rates</li>
           </ul>
         </section>
-        <section id="projects/research" class="slide">
+        <section id="research" class="slide">
           <p><strong>Personal Website</strong> <em class="daterange">July 2018 - Present</em></p>
           <ul>
             <li>Designing and building a personal, professional website from the ground up using the latest web technologies (CSS Grid, ES6) without the use of frameworks</li>
@@ -174,6 +175,7 @@
         <option value="en">English (en-US)</option>
         <option value="he">עברית (he-IL)</option>
         <option value="de">Deutsch (de-DE)</option>
+        <option value="es">Español (es-ES)</option>
       </select>
     </form>
   </footer>

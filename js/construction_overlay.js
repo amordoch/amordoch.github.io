@@ -12,12 +12,12 @@ function add_lang_overlay(event, which) {
   // Language-specific under construction message
   if (which === 'de') {
     // Select first <p> of the lang-overlay div
-    overlay.children[0].innerHTML = 'Die deutsche Seite ist gerade im Aufbau. \
+    overlay.children[0].innerHTML = 'Diese Seite ist gerade im Aufbau. \
 Während des Aufbaus, bitte benutzen Sie die englische Seite. Dankeschön!';
   } else if (which === 'he') {
     overlay.children[0].innerHTML = '\u202eתרגום האתר לא מוחן. נא להשתמש בגירסה האנגלית. תודה\u202e';
   } else if (which == 'es') {
-    overlay.children[0].innerHTML = 'El sitio español se está construyendo. Por favor usa el sitio ingles.'
+    overlay.children[0].innerHTML = 'Esta pagina se está construyendo. Por favor usa la inglesa.'
   } else {
     overlay.children[0].innerHTML = 'Looks like something went wrong. Please click the \
 flag below to return to the previous page.';

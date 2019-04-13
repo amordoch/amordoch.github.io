@@ -1,0 +1,19 @@
+{
+    "en": {
+        "home":"home",
+        "contact":"contact",
+        "resume":"resume"
+    },
+    
+    "de":{
+        "home":"hauptseite",
+        "contact":"kontakt",
+        "resume":"resume"
+    },
+    
+    "es":{
+        "home":"inicio",
+        "contact":"contacto",
+        "resume":"curriculum"
+    }
+}

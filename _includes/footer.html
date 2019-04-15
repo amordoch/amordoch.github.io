@@ -1,7 +1,6 @@
-<p>Copyright &copy; 2018 Ariel Mordoch. Licensed under the
-    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> See link for details.</p>
+<p>{{ site.data.i18n[include.lang].copyright_notice }}</p>
 <form>
-    <label for="language-select">Language: </label>
+    <label for="language-select">{{ site.data.i18n[include.lang].lang_select }}: </label>
     <select id="language-select" oninput="lang_redirect(event);">
         <option value="en" selected>English (en-US)</option>
         <option value="he">עברית (he-IL)</option>

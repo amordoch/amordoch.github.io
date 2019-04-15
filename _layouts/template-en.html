@@ -8,22 +8,13 @@
     {%- for stylesheet in page.custom_css -%}
       <link rel="stylesheet" href="/assets/css/{{ stylesheet }}.css">
     {%- endfor -%}
-  {%- endif -%}
-  {%- if page.custom_js -%}
-     {%- for js in page.custom_js -%}
-      <script src="/assets/js/{{ js }}.js"></script>
-    {%- endfor -%}
-  {%- endif -%}
- 
+  {%- endif -%} 
 </head>
 
 <body>
   <header>
     <div class="unsupported-browser">
-      <p><strong>Warning: Your browser is not supported. This site will not function correctly. Please download the
-          latest version of <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox,</a> <a
-            href="https://www.google.com/chrome/">Chrome,</a> or <a
-            href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge.</a></strong></p>
+      <p><strong>{{ site.data.i18n[page.lang].unsupported_browser }}</strong></p>
     </div>
     {% include nav.html lang=page.lang %}
   </header>
@@ -39,8 +30,14 @@
     </div>
   </main>
   <footer>
-    {% include footer.html %}
+    {% include footer.html lang=page.lang %}
   </footer>
+  <script src="/assets/js/active_page.js"></script>
+  {%- if page.custom_js -%}
+     {%- for js in page.custom_js -%}
+      <script src="/assets/js/{{ js }}.js"></script>
+    {%- endfor -%}
+  {%- endif -%}
 </body>
 
 </html>

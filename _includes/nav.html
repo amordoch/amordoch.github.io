@@ -1,18 +1,18 @@
 {%- comment -%} Setup links, per localization {%- endcomment -%}
 {%- if include.lang != 'en' -%}
-    {%- capture index -%} '/' include.lang '/' index.html {%- endcapture -%} 
-    {%- capture resume -%} '/' include.lang '/' resume.html {%- endcapture -%}
-    {%- capture contact -%} '/' include.lang '/' contact.html {%- endcapture -%}
+    {%- capture index -%} /{{ include.lang }}/ {%- endcapture -%} 
+    {%- comment -%}{%- capture resume -%} '/' include.lang '/' resume.html {%- endcapture -%}{%- endcomment -%}
+    {%- capture contact -%} /{{ include.lang }}/contact.html {%- endcapture -%} 
 {%- else -%}
-    {%- assign index = 'index.html' -%}
-    {%- assign resume = 'resume.html' -%}
+    {%- assign index = '/' -%}
     {%- assign contact = 'contact.html' -%}
 {%- endif -%}    
+{%- assign resume = '/resume.html' -%}
 <nav class="navbar">
     <ul class="container">
-      <li><a href="{{ index }}">{{ site.data.navtext.[include.lang].home }}</a></li>
-      <li><a href="{{ resume }}">{{ site.data.navtext.[include.lang].resume }}</a></li>
-      <li><a href="{{ contact }}">{{ site.data.navtext.[include.lang].contact }}</a></li>
+      <li><a href="{{ index }}">{{ site.data.i18n[include.lang].nav.home }}</a></li>
+      <li><a href="{{ resume }}">{{ site.data.i18n[include.lang].nav.resume }}</a></li>
+      <li><a href="{{ contact }}">{{ site.data.i18n[include.lang].nav.contact }}</a></li>
       <li class="dropdown">
         <img src="/assets/static/lang-icon.png" alt="Languages">
         <ul>

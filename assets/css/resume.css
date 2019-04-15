@@ -58,7 +58,8 @@ footer {
 #category-tabs button {
   all: unset;
   font-family: 'Lato', sans-serif;
-  color: rgba(0, 0, 0, .5);
+  color: #000;
+  opacity: .5;
 }
 
 #category-tabs button:hover, #category-tabs button:focus {
@@ -68,7 +69,7 @@ footer {
 }
 
 #category-tabs .slide-active-selection {
-  color: #000;
+  opacity: 1;
 }
 
 .daterange {

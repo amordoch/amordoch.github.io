@@ -63,7 +63,7 @@ footer {
 }
 
 #category-tabs button:hover, #category-tabs button:focus {
-  color: black;
+  opacity: 1;
   transform: scale(.95);
   transition: transform 100ms linear;
 }

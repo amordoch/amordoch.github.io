@@ -4,6 +4,7 @@ function handle_captcha(tok) {
     if (fetch) {
         data = {
             method:'POST',
+            mode: 'cors',
             headers:{ "Content-Type": "application/json"},
             body: JSON.stringify({token: tok})
         };
@@ -16,7 +17,7 @@ function handle_captcha(tok) {
          );
     } else {
         xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://amord-process-captcha.herokuapp.com');
+        xhr.open('POST', 'https://amord-process-captcha.herokuapp.com', true);
         xhr.setRequestHeader("Content-Type", "application/json");
         
         xhr.onreadystatechange = function() {

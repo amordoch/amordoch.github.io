@@ -2,6 +2,7 @@
 layout: template-en
 title: Ariel Mordoch | Contact
 lang: en
+custom_js: contact
 ---
 <h1 class="grid-span-cols">contact</h1>
 <div class="grid-box">
@@ -11,37 +12,9 @@ lang: en
     your message, and I will get back to you as soon as I can.</p>
   <div class="g-recaptcha" data-sitekey="6LdUbGYUAAAAABweMCOU_dfKXnAJgE8G2eQ4Cja_" data-callback="handle_captcha">
   </div>
-  <script type="text/javascript">
-    function handle_captcha(response) {
-      if (fetch) {
-        fetch('https://amordoch.github.io/hidden.json').then(
-          response => response.json()
-        ).then(function (eml) {
-          encrypted = eml.email;
-          let decoded = '';
-          for (let i = 0; i < encrypted.length; i++) {
-            decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
-          }
-          window.location.assign("mailto:" + decoded);
-        });
-      } else {
-        eml = new XMLHttpRequest();
-        eml.open('GET', 'https://amordoch.github.io/hidden.json');
-        eml.responseType = 'json';
-        eml.onload = function (e) {
-          encrypted = this.response.email;
-          let decoded = '';
-          for (let i = 0; i < encrypted.length; i++) {
-            decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
-          }
-          window.location.assign("mailto:" + decoded);
-        }
-        eml.send();
-      }
-    }
-  </script>
 </div>
 <div class="grid-box">
   <h2>by phone</h2>
   <p>You can find me at <a href="tel:+14045934361">+1 404-593-4361.</a></p>
 </div>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

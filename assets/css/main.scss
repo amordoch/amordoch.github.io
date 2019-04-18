@@ -123,6 +123,11 @@ html.no-cssgrid {
 
 /*** NAV ***/
 
+@mixin nav-shadow {
+  transition: ease 0.25s;
+  box-shadow: 0 -2px black inset;
+}
+
 .navbar {
   background-color: $buzz-gold;
   font-family: 'Lato', sans-serif;
@@ -145,9 +150,14 @@ html.no-cssgrid {
     position: relative;
   }
   
-  li:hover, li:focus-within {
-    transition: ease 0.25s;
-    box-shadow: 0 -2px black inset;
+  // Split up focus-within's so that nav menu still works in Edge
+  // Gotta use mixin's though, so SASS doesn't group the selectors
+  li:hover {
+    @include nav-shadow;
+  }
+
+  li:focus-within {
+    @include nav-shadow;
   }
   
   img {
@@ -157,7 +167,7 @@ html.no-cssgrid {
 
 
 .nav-bottom-shadow {
-  box-shadow: 0 -2px black inset;
+  @include nav-shadow;
 }
 
 #linkedin {
@@ -191,9 +201,17 @@ html.no-cssgrid {
     z-index: 999;
   }
   
-  li:hover, li:focus-within {
+  @mixin color-change {
     background-color: $buzz-gold-60;
     box-shadow: unset;
+  }
+
+  li:hover {
+    @include color-change;    
+  }
+
+  li:focus-within {
+    @include color-change;
   }
   
   ul li {
@@ -201,19 +219,20 @@ html.no-cssgrid {
   }
   
   /* And here is the actual magic */
-  
-  &:hover>ul, &:focus-within>ul, &>ul:hover {
+
+  @mixin drop-in {
     animation: drop-in .25s;
     animation-fill-mode: forwards;
   }
-}
+  
+  &:hover>ul, &>ul:hover {
+    @include drop-in;
+  }
 
+  &:focus-within > ul {
+    @include drop-in;
+  }
 
-/* IE11 doesn't support :focus-within */
-
-.no-cssgrid .dropdown:hover>ul, .dropdown *:focus, .dropdown>ul:hover {
-  animation: drop-in .25s;
-  animation-fill-mode: forwards;
 }
 
 /* drop in by secretly moving to the left, then only animating opacity  */
@@ -317,7 +336,7 @@ html.no-cssgrid {
 
 /* Reduce font size, transition from grid to column on small devices */
 
-@media all and (max-width: 7in), (min-resolution: 144dpi), (-webkit-min-device-pixel-raito: 1.5) {
+@media all and (max-width: 7in) and (min-resolution: 144dpi), (-webkit-min-device-pixel-raito: 1.5) {
   /* In essence, changes nothing, but allows sticky footer */
   body {
     display: flex;

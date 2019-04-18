@@ -132,7 +132,7 @@ html.no-cssgrid {
   position: relative;
 }
 
-.navbar li:hover, .navbar li:active {
+.navbar li:hover, .navbar li:focus-within {
   transition: ease 0.25s;
   box-shadow: 0 -2px black inset;
 }
@@ -176,7 +176,7 @@ as we cannot animate it if display is set to none */
   z-index: 999;
 }
 
-.dropdown li:hover, .dropdown li:active {
+.dropdown li:hover, .dropdown li:focus-within {
   background-color: #F5D580;
   box-shadow: unset;
 }
@@ -187,7 +187,7 @@ as we cannot animate it if display is set to none */
 
 /* And here is the actual magic */
 
-.dropdown:hover>ul, .dropdown:active>ul, .dropdown>ul:hover, .dropdown>ul:active {
+.dropdown:hover>ul, .dropdown:focus-within>ul, .dropdown>ul:hover {
   animation: drop-in .25s;
   animation-fill-mode: forwards;
 }

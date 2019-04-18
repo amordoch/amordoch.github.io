@@ -1,6 +1,9 @@
-/* General */
+---
+---
+@import 'colors';
+// General
 
-/* TODO: add media query to change font sizes on small screens */
+// TODO: add media query to change font sizes on small screens 
 
 * {
   -webkit-box-sizing: border-box;
@@ -32,19 +35,26 @@ main {
 footer {
   font-size: .6em;
   padding-left: 1rem;
+
+  a, a:visited {
+    color: inherit;
+  }
+
+  form, p {
+    display: inline-block;
+  }
 }
 
-footer a, footer a:visited {
-  color: inherit;
-}
 
 a {
-  color: #004F9F;
+  color: $link-blue;
+  
+  &:hover, &:focus {
+    color: #1879DB;
+  }
+
 }
 
-a:hover, a:focus {
-  color: #1879DB;
-}
 
 .container {
   display: flex;
@@ -69,77 +79,82 @@ html.no-cssgrid {
     flex-direction: column;
 }
 
-.no-cssgrid body {
-  /* In essence, changes nothing, but allows sticky footer */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+.no-cssgrid {
 
-.no-cssgrid header {
-  padding-left: 0;
-}
+  body {
+    /* In essence, changes nothing, but allows sticky footer */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-.no-cssgrid main {
-  flex-grow: 1;
-}
+  header {
+    padding-left: 0;
+  }
 
-.no-cssgrid .unsupported-browser {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  main {
+    flex-grow: 1;
+  }
 
-.no-cssgrid .content {
-  display: flex;
-  flex-direction: column;
-}
+  .unsupported-browser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.no-cssgrid .grid-box {
-  margin-bottom: 1em;
-}
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
 
-.no-cssgrid .grid-span-cols {
-  align-self: center;
-}
+  .grid-box {
+    margin-bottom: 1em;
+  }
 
-.no-cssgrid .content h3 {
-  margin-top: auto;
+  .grid-span-cols {
+    align-self: center;
+  }
+
+  .content h3 {
+    margin-top: auto;
+  }
+
 }
 
 /*** NAV ***/
 
 .navbar {
-  background-color: #EAAA00;
+  background-color: $buzz-gold;
   font-family: 'Lato', sans-serif;
   font-size: 1.1em;
   padding: 0 1vw;
+
+  ul {
+    list-style: none;
+    padding: 0 0;
+    margin: 0 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  ul li {
+    padding: 5px;
+    position: relative;
+  }
+  
+  li:hover, li:focus-within {
+    transition: ease 0.25s;
+    box-shadow: 0 -2px black inset;
+  }
+  
+  img {
+    max-height: 1em;
+  }
 }
 
-.navbar ul {
-  list-style: none;
-  padding: 0 0;
-  margin: 0 0;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: black;
-}
-
-.navbar ul li {
-  padding: 5px;
-  position: relative;
-}
-
-.navbar li:hover, .navbar li:focus-within {
-  transition: ease 0.25s;
-  box-shadow: 0 -2px black inset;
-}
-
-.navbar img {
-  max-height: 1em;
-}
 
 .nav-bottom-shadow {
   box-shadow: 0 -2px black inset;
@@ -155,42 +170,44 @@ html.no-cssgrid {
 
 /** DROPDOWN **/
 
-.dropdown img {
-  padding: 0 .2em;
+.dropdown {
+  /* Set all dropdown properties now, take it out of document flow with position: absolute; and hide it with visibility
+  as we cannot animate it if display is set to none */
+  img {
+    padding: 0 .2em;
+  }
+  
+  ul {
+    /* account for .navbar ul li margin */
+    margin: 5px auto;
+    display: block;
+    position: absolute;
+    left: -9999vw;
+    opacity: 0;
+    background-color: $buzz-gold;
+    text-align: center;
+    min-width: 100%;
+    animation: drop-out .25s;
+    z-index: 999;
+  }
+  
+  li:hover, li:focus-within {
+    background-color: $buzz-gold-60;
+    box-shadow: unset;
+  }
+  
+  ul li {
+    padding: 2px 0;
+  }
+  
+  /* And here is the actual magic */
+  
+  &:hover>ul, &:focus-within>ul, &>ul:hover {
+    animation: drop-in .25s;
+    animation-fill-mode: forwards;
+  }
 }
 
-/* Set all dropdown properties now, take it out of document flow with position: absolute; and hide it with visibility
-as we cannot animate it if display is set to none */
-
-.dropdown ul {
-  /* account for .navbar ul li margin */
-  margin: 5px auto;
-  display: block;
-  position: absolute;
-  left: -9999vw;
-  opacity: 0;
-  background-color: #EAAA00;
-  text-align: center;
-  min-width: 100%;
-  animation: drop-out .25s;
-  z-index: 999;
-}
-
-.dropdown li:hover, .dropdown li:focus-within {
-  background-color: #F5D580;
-  box-shadow: unset;
-}
-
-.dropdown ul li {
-  padding: 2px 0;
-}
-
-/* And here is the actual magic */
-
-.dropdown:hover>ul, .dropdown:focus-within>ul, .dropdown>ul:hover {
-  animation: drop-in .25s;
-  animation-fill-mode: forwards;
-}
 
 /* IE11 doesn't support :focus-within */
 
@@ -246,20 +263,23 @@ as we cannot animate it if display is set to none */
   justify-self: center;
 }
 
-.content h1 {
-  font-size: 3em;
-  margin-top: .5em;
-  margin-bottom: auto;
+.content {
+  h1 {
+    font-size: 3em;
+    margin-top: .5em;
+    margin-bottom: auto;
+  }
+
+  h2 {
+    font-size: 1.7em;
+    margin-top: auto;
+  }
+  
+  h3 {
+    margin-top: -4vh;
+  }
 }
 
-.content h2 {
-  font-size: 1.7em;
-  margin-top: auto;
-}
-
-.content h3 {
-  margin-top: -4vh;
-}
 
 .grid-box {
   background: rgba(255, 255, 255, 0.4);
@@ -281,9 +301,6 @@ as we cannot animate it if display is set to none */
   display: block;
 }
 
-footer form, footer p {
-  display: inline-block;
-}
 
 #lang-overlay {
   position: fixed;

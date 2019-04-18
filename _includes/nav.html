@@ -2,12 +2,12 @@
 {%- if include.lang != 'en' -%}
     {%- capture index -%} /{{ include.lang }}/ {%- endcapture -%} 
     {%- comment -%}{%- capture resume -%} '/' include.lang '/' resume.html {%- endcapture -%}{%- endcomment -%}
-    {%- capture contact -%} /{{ include.lang }}/contact.html {%- endcapture -%} 
+    {%- capture contact -%} /{{ include.lang }}/contact {%- endcapture -%} 
 {%- else -%}
     {%- assign index = '/' -%}
-    {%- assign contact = 'contact.html' -%}
+    {%- assign contact = '/contact' -%}
 {%- endif -%}    
-{%- assign resume = '/resume.html' -%}
+{%- assign resume = '/resume' -%}
 <nav class="navbar">
     <ul class="container">
       <li><a href="{{ index }}">{{ site.data.i18n[include.lang].nav.home }}</a></li>

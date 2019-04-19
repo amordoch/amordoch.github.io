@@ -1,0 +1,366 @@
+---
+---
+@import 'colors';
+// General
+
+// TODO: add media query to change font sizes on small screens 
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  margin: auto;
+  color: white;
+  background: linear-gradient(#636C7F, #3B414C);
+}
+
+h1, h2, h3 {
+  font-family: 'Lato', sans-serif;
+}
+
+main {
+  padding-bottom: 1em;
+}
+
+footer {
+  font-size: .6em;
+  padding-left: 1rem;
+
+  a, a:visited {
+    color: inherit;
+  }
+
+  form, p {
+    display: inline-block;
+  }
+}
+
+
+a {
+  color: $link-blue;
+  
+  &:hover, &:focus {
+    color: #1879DB;
+  }
+
+}
+
+
+.container {
+  display: flex;
+  flex: auto;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.unsupported-browser {
+  display: none;
+  font-size: 1.2em;
+  color: black;
+  height: 3em;
+  /* Thanks, Github */
+  background-image: linear-gradient(#f7f7f7, #eaeaea);
+}
+
+/*** NO GRID ***/
+/* General fix for buggy IE flexbox */
+html.no-cssgrid {
+    display: flex;
+    flex-direction: column;
+}
+
+.no-cssgrid {
+
+  body {
+    /* In essence, changes nothing, but allows sticky footer */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    padding-left: 0;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+
+  .unsupported-browser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grid-box {
+    margin-bottom: 1em;
+  }
+
+  .grid-span-cols {
+    align-self: center;
+  }
+
+  .content h3 {
+    margin-top: auto;
+  }
+
+}
+
+/*** NAV ***/
+
+@mixin nav-shadow {
+  transition: ease 0.25s;
+  box-shadow: 0 -2px black inset;
+}
+
+.navbar {
+  background-color: $buzz-gold;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1em;
+  padding: 0 1vw;
+
+  ul {
+    list-style: none;
+    padding: 0 0;
+    margin: 0 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  ul li {
+    padding: 5px;
+    position: relative;
+  }
+  
+  // Split up focus-within's so that nav menu still works in Edge
+  // Gotta use mixin's though, so SASS doesn't group the selectors
+  li:hover {
+    @include nav-shadow;
+  }
+
+  li:focus-within {
+    @include nav-shadow;
+  }
+  
+  img {
+    max-height: 1em;
+  }
+}
+
+
+.nav-bottom-shadow {
+  @include nav-shadow;
+}
+
+#linkedin {
+  margin-left: auto;
+}
+
+#github-li:hover, #linkedin:hover {
+  background-color: inherit;
+}
+
+/** DROPDOWN **/
+
+.dropdown {
+  /* Set all dropdown properties now, take it out of document flow with position: absolute; and hide it with visibility
+  as we cannot animate it if display is set to none */
+  img {
+    padding: 0 .2em;
+  }
+  
+  ul {
+    /* account for .navbar ul li margin */
+    margin: 5px auto;
+    display: block;
+    position: absolute;
+    left: -9999vw;
+    opacity: 0;
+    background-color: $buzz-gold;
+    text-align: center;
+    min-width: 100%;
+    animation: drop-out .25s;
+    z-index: 999;
+  }
+  
+  @mixin color-change {
+    background-color: $buzz-gold-60;
+    box-shadow: unset;
+  }
+
+  li:hover {
+    @include color-change;    
+  }
+
+  li:focus-within {
+    @include color-change;
+  }
+  
+  ul li {
+    padding: 2px 0;
+  }
+  
+  /* And here is the actual magic */
+
+  @mixin drop-in {
+    animation: drop-in .25s;
+    animation-fill-mode: forwards;
+  }
+  
+  &:hover>ul, &>ul:hover {
+    @include drop-in;
+  }
+
+  &:focus-within > ul {
+    @include drop-in;
+  }
+
+}
+
+/* drop in by secretly moving to the left, then only animating opacity  */
+
+@keyframes drop-in {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+/* Drop out by animating opacity, then secretly moving to the left */
+
+@keyframes drop-out {
+  0% {
+    opacity: 1;
+    left: 0;
+  }
+  99.9999% {
+    opacity: 0;
+    left: 0;
+  }
+  100% {
+    left: -9999vw;
+  }
+}
+
+/*** CONTENT ***/
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 36vw;
+  margin: 0 1em;
+  grid-row-gap: 5vh;
+}
+
+/* For blocks of content */
+
+.grid-span-cols {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.content {
+  h1 {
+    font-size: 3em;
+    margin-top: .5em;
+    margin-bottom: auto;
+  }
+
+  h2 {
+    font-size: 1.7em;
+    margin-top: auto;
+  }
+  
+  h3 {
+    margin-top: -4vh;
+  }
+}
+
+
+.grid-box {
+  background: rgba(159, 173, 203, .2);
+  border: rgba(0, 0, 0, 0.2) 1px solid;
+  border-radius: .5em;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+/* For construction notification */
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+
+#lang-overlay {
+  position: fixed;
+  top: 0;
+  z-index: 9999999;
+  height: 100%;
+  width: 100%;
+  background: black;
+  text-align: center;
+  padding-top: 10%;
+  font-size: 2em;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Reduce font size, transition from grid to column on small devices */
+
+@media all and (max-width: 7in) and (min-resolution: 144dpi), (-webkit-min-device-pixel-raito: 1.5) {
+  /* In essence, changes nothing, but allows sticky footer */
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  footer {
+    margin-top: auto;
+  }
+  main {
+    background-position: top;
+    flex-grow: 1;
+  }
+  .content {
+    font-size: .8em;
+    display: flex;
+    flex-direction: column;
+  }
+  .grid-box {
+    margin-bottom: 1em;
+  }
+  .navbar {
+    font-size: 1.5em;
+  }
+  .grid-span-cols {
+    align-self: center;
+  }
+
+  .content h3 {
+    margin-top: auto;
+  }
+}

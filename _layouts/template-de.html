@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    {% include header.html name=page.title %}
+    {%- comment -%} load custom stylesheets and js {%- endcomment -%}
+    {%- if page.custom_css -%}
+      {%- for stylesheet in page.custom_css -%}
+        <link rel="stylesheet" href="/assets/css/{{ stylesheet }}.css">
+      {%- endfor -%}
+    {%- endif -%} 
+  </head>
+
+<body>
+  <header>
+    <div class="unsupported-browser">
+      <p><strong>Achtung: Dein Webbrowser ist nicht unterstützt. Diese Seite wird falsch funktionieren. Bitte unterladen
+          Sie die neuste Version von <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox,</a> <a
+            href="https://www.google.com/chrome/">Chrome,</a> oder <a
+            href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge.</a></strong></p>
+    </div>
+    {% include nav.html lang=page.lang %}
+  </header>
+  <main>
+    <div class="content">
+      <h1 class="grid-span-cols">titel der seite</h1>
+      <div class="grid-box"></div>
+      <div class="grid-box"></div>
+      <div class="grid-box"></div>
+      <div class="grid-box"></div>
+    </div>
+    <div id="lang-overlay" class="hide">
+      <p></p>
+      <a href="#en" onclick="rm_lang_overlay(event)">
+        <span class="flag-icon flag-icon-gb-eng"></span>
+      </a>
+    </div>
+  </main>
+  <footer>
+    <p>Copyright &copy; 2018 Ariel Mordoch. Lizenziert unter den
+      <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> Sehen Sie den Link für die Hinweise.
+    </p>
+    <form>
+      <label for="language-select">Sprache: </label>
+      <select id="language-select" oninput="lang_redirect(event);">
+        <option value="en">English (en-US)</option>
+        <option value="he">עברית (he-IL)</option>
+        <option value="de" selected>Deutsch (de-DE)</option>
+        <option value="es">Español (es-ES)</option>
+      </select>
+    </form>
+  </footer>
+  <script src="../js/active_page.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+{%- comment -%} Setup links, per localization {%- endcomment -%}
+{%- if include.lang != 'en' -%}
+    {%- capture index -%} /{{ include.lang }}/ {%- endcapture -%} 
+    {%- comment -%}{%- capture resume -%} '/' include.lang '/' resume.html {%- endcapture -%}{%- endcomment -%}
+    {%- capture contact -%} /{{ include.lang }}/contact {%- endcapture -%} 
+{%- else -%}
+    {%- assign index = '/' -%}
+    {%- assign contact = '/contact' -%}
+{%- endif -%}    
+{%- assign resume = '/resume' -%}
+<nav class="navbar">
+    <ul class="container">
+      <li><a href="{{ index }}">{{ site.data.i18n[include.lang].nav.home }}</a></li>
+      <li><a href="{{ resume }}">{{ site.data.i18n[include.lang].nav.resume }}</a></li>
+      <li><a href="{{ contact }}">{{ site.data.i18n[include.lang].nav.contact }}</a></li>
+      <li class="dropdown">
+        <img src="/assets/static/lang-icon.png" alt="Languages">
+        <ul>
+          <li><a href="#en" onclick="lang_redirect('en');"><span class="flag-icon flag-icon-gb-eng"></span></a></li>
+          <li><a href="#he" onclick="add_lang_overlay(event, 'he');"><span class="flag-icon flag-icon-il"></span></a>
+          </li>
+          <li><a href="#de" onclick="lang_redirect('de');"><span class="flag-icon flag-icon-de"></span></a></li>
+          <li><a href="#es" onclick="lang_redirect('es');"><span class="flag-icon flag-icon-es"></span></a></li>
+        </ul>
+      </li>
+      <li id="linkedin">
+        <a href="http://www.linkedin.com/in/ariel-mordoch-7b9950139">
+          <img src="/assets/static/In-2C-28px-R.png" alt="Ariel's LinkedIn">
+        </a>
+      </li>
+      <li id="github-li">
+        <a href="https://www.github.com/amordoch" target="_blank">
+          <img src="/assets/static/gh-icon.png" alt="Ariel's Github" id="github-icon">
+        </a>
+      </li>
+    </ul>
+</nav>

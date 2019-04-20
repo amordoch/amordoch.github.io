@@ -1,11 +1,14 @@
 {%- comment -%} Setup links, per localization {%- endcomment -%}
+{%- assign sub_url = include.url | replace: '.html', '' -%}
 {%- if include.lang != 'en' -%}
     {%- capture index -%} /{{ include.lang }}/ {%- endcapture -%} 
     {%- comment -%}{%- capture resume -%} '/' include.lang '/' resume.html {%- endcapture -%}{%- endcomment -%}
     {%- capture contact -%} /{{ include.lang }}/contact {%- endcapture -%} 
+    {% assign sub_url = sub_url | replace: index, '' %}
 {%- else -%}
-    {%- assign index = '/' -%}
-    {%- assign contact = '/contact' -%}
+  {%- assign index = '/' -%}
+  {%- assign contact = '/contact' -%}
+  {% assign sub_url = sub_url | remove_first: '/' %}
 {%- endif -%}    
 {%- assign resume = '/resume' -%}
 <nav class="navbar">
@@ -16,11 +19,11 @@
       <li class="dropdown">
         <img src="/assets/static/lang-icon.png" alt="Languages">
         <ul>
-          <li><a href="#en" onclick="lang_redirect('en');"><span class="flag-icon flag-icon-gb-eng"></span></a></li>
+          <li><a href="/{{ sub_url }}"><span class="flag-icon flag-icon-gb-eng"></span></a></li>
           <li><a href="#he" onclick="add_lang_overlay(event, 'he');"><span class="flag-icon flag-icon-il"></span></a>
           </li>
-          <li><a href="#de" onclick="lang_redirect('de');"><span class="flag-icon flag-icon-de"></span></a></li>
-          <li><a href="#es" onclick="lang_redirect('es');"><span class="flag-icon flag-icon-es"></span></a></li>
+          <li><a href="/de/{{ sub_url }}"><span class="flag-icon flag-icon-de"></span></a></li>
+          <li><a href="/es/{{ sub_url }}"><span class="flag-icon flag-icon-es"></span></a></li>
         </ul>
       </li>
       <li id="linkedin">

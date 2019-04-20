@@ -183,6 +183,7 @@ html.no-cssgrid {
 .dropdown {
   /* Set all dropdown properties now, take it out of document flow with position: absolute; and hide it with visibility
   as we cannot animate it if display is set to none */
+  
   img {
     padding: 0 .2em;
   }
@@ -191,6 +192,8 @@ html.no-cssgrid {
     /* account for .navbar ul li margin */
     margin: 5px auto;
     display: block;
+    transform: scaleY(0);
+    transform-origin: top;
     position: absolute;
     left: -9999vw;
     opacity: 0;
@@ -223,6 +226,7 @@ html.no-cssgrid {
   @mixin drop-in {
     animation: drop-in .25s;
     animation-fill-mode: forwards;
+    overflow: visible;
   }
   
   &:hover>ul, &>ul:hover {
@@ -244,6 +248,7 @@ html.no-cssgrid {
   }
   100% {
     left: 0;
+    transform: scaleY(1);
     opacity: 1;
   }
 }
@@ -254,9 +259,11 @@ html.no-cssgrid {
   0% {
     opacity: 1;
     left: 0;
+    transform: scaleY(1);
   }
   99.9999% {
     opacity: 0;
+    transform: scaleY(0);
     left: 0;
   }
   100% {

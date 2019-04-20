@@ -10,7 +10,7 @@
 </form>
 <script>
     let lang_select = document.getElementById('language-select');
-    for (i = 0; i <= lang_select.childElementCount; i++) {
+    for (i = 0; i < lang_select.childElementCount; i++) {
         if (lang_select[i].value === "{{ include.lang }}") {
             lang_select[i].selected = true;
         }

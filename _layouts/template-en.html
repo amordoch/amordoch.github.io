@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ page.lang }}">
 
 <head>
-  {% include header.html name=page.title %}
+  {% include header.html name=page.title descrip=page.description %}
   {%- comment -%} load custom stylesheets and js {%- endcomment -%}
   {%- if page.custom_css -%}
     {%- for stylesheet in page.custom_css -%}

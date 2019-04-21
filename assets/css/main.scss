@@ -343,7 +343,7 @@ html.no-cssgrid {
 
 /* Reduce font size, transition from grid to column on small devices */
 
-@media all and (max-width: 7in) and (min-resolution: 144dpi), (-webkit-min-device-pixel-raito: 1.5) {
+@media all and (max-width: 980px) and (min-resolution: 144dpi), (-webkit-min-device-pixel-raito: 1.5) {
   /* In essence, changes nothing, but allows sticky footer */
   body {
     display: flex;

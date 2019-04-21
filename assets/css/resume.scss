@@ -67,7 +67,7 @@ footer {
     color: #000;
     opacity: .5;
 
-    &:hover, &:focus {
+    &:hover {
       opacity: 1;
       transform: scale(.95);
       transition: transform 100ms linear;

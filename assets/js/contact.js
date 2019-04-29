@@ -1,3 +1,16 @@
+function decode(encrypted) {
+    // Subtract 1 from every code point in string e.
+    let decoded = '';
+    for (let i = 0; i < encrypted.length; i++) {
+        decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
+    }
+    // Replace <p> element with email address and remove prompt
+    let captcha = document.getElementsByClassName('g-recaptcha')[0];
+    captcha.previousSibling.outerHTML = `<address>My email address is \
+    <a href="mailto:${decoded}">${decoded}</a></address>`;
+    captcha.remove();
+}
+
 function handle_captcha(tok) {
     // Send reCAPTCHA user response token to backend
     let url = "https://amord-process-captcha.herokuapp.com";
@@ -11,16 +24,9 @@ function handle_captcha(tok) {
         fetch(url, data).then(response => response.json()).then(
             function (response) {
                 if (response.success) {
-                    fetch('https://arielmordoch.com/hidden.json').then(
+                    fetch('https://www.arielmordoch.com/hidden.json').then(
                         response => response.json()
-                    ).then(function (eml) {
-                        encrypted = eml.email;
-                        let decoded = '';
-                        for (let i = 0; i < encrypted.length; i++) {
-                            decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
-                        }
-                        window.location.assign("mailto:" + decoded);
-                    });
+                    ).then(eml => decode(eml.email));
                 }
             }
         );
@@ -33,15 +39,10 @@ function handle_captcha(tok) {
             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                 if (this.response.success) {
                     eml = new XMLHttpRequest();
-                    eml.open('GET', 'https://arielmordoch.com/hidden.json');
+                    eml.open('GET', 'https://www.arielmordoch.com/hidden.json');
                     eml.responseType = 'json';
                     eml.onload = function (e) {
-                        encrypted = this.response.email;
-                        let decoded = '';
-                        for (let i = 0; i < encrypted.length; i++) {
-                            decoded += String.fromCodePoint(encrypted.codePointAt(i) - 1);
-                        }
-                        window.location.assign("mailto:" + decoded);
+                        decode(this.response.email)
                     }
                     eml.send();
                 }

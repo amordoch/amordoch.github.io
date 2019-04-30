@@ -6,8 +6,8 @@ function decode(encrypted) {
     }
     // Replace <p> element with email address and remove prompt
     let captcha = document.getElementsByClassName('g-recaptcha')[0];
-    captcha.previousElementSibling.outerHTML = `<address>My email address is \
-    <a href="mailto:${decoded}">${decoded}</a></address>`;
+    captcha.previousElementSibling.outerHTML = `My email address is \
+    <a href="mailto:${decoded}">${decoded}.</a>`;
     captcha.remove();
 }
 

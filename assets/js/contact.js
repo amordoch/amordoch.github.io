@@ -1,3 +1,27 @@
+// Instead of submitting the form using the usual method, do it with AJAX
+let contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (grecaptcha.getResponse() != "") {
+        // Disable error message, if active
+        document.getElementById('captcha-error').classList.add('hide');
+        // Get form response, redirect to thank you page
+        fetch("https://amord-process-captcha.herokuapp.com", {
+            method: 'POST',
+            mode: 'cors',
+            body: FormData(contactForm)
+        }).then(function(response) {
+            if (response.ok) {
+                window.location = response.url;
+            }
+        });
+    } else {
+        // Add captcha error message
+        document.getElementById('captcha-error').classList.remove('hide');
+    }
+});
+
+
 function decode(encrypted) {
     // Subtract 1 from every code point in string e.
     let decoded = '';

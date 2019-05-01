@@ -1,7 +1,11 @@
 ---
 ---
+@import 'colors';
 $trans: border-color 300ms;
 
+.g-recaptcha {
+    display: inline-block;
+}
 
 #sender, #msgbox {
     display: block;
@@ -28,4 +32,23 @@ $trans: border-color 300ms;
 
 #sender, #msgbox, button {
     margin-bottom: .5em;
+}
+
+// Captcha error box
+#captcha-error {
+    overflow: show;
+    word-break: keep-all;
+    color: white;
+    background: $dark-gray;
+    max-height: 1.1em;
+    
+    $tri-len: 5px;
+    &::before {
+        // Left pointing arrow, thanks CSS Tricks
+        width: 0;
+        height: 0;
+        border-right: $dark-gray $tri-len solid;
+        border-top: $tri-len solid transparent;
+        border-bottom: $tri-len solid transparent;
+    }
 }

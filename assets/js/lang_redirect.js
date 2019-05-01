@@ -7,7 +7,7 @@ function lang_redirect(lang) {
     let path = window.location.pathname;
     if (lang === 'en') {
         window.location = window.location.href.replace('/de/', '/').replace('/es/', '/');
-    } else if (lang === 'he' || path.includes('resume')) {
+    } else if (lang === 'he' || (lang === 'es' && path.includes('resume'))) {
         add_lang_overlay('', lang);
     } else if (!path.includes('/' + lang + '/')) {
         if (path.includes('/de/') || path.includes('/es/')) {

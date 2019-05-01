@@ -7,10 +7,22 @@ $trans: border-color 300ms;
     display: inline-block;
 }
 
-#sender, #msgbox {
+#contact-form:nth-child(1) {
     display: block;
+}
+
+%input-style {
     border: 1px solid gray;
-    font-family: Roboto Slab, sans-serif;
+    font-family: 'Roboto Slab', sans-serif;
+    margin-bottom: .5em;
+}
+
+button[type="submit"] {
+    @extend %input-style;
+}
+
+#sender, #msgbox {
+    @extend %input-style;
 
     &:focus:invalid {
         border-color: red; 
@@ -45,6 +57,7 @@ $trans: border-color 300ms;
     $tri-len: 5px;
     &::before {
         // Left pointing arrow, thanks CSS Tricks
+        content: '';
         width: 0;
         height: 0;
         border-right: $dark-gray $tri-len solid;

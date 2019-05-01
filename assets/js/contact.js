@@ -2,7 +2,7 @@
 let contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    if (grecaptcha.getResponse() != "") {
+    if (grecaptcha.getResponse() !== "") {
         // Disable error message, if active
         document.getElementById('captcha-error').classList.add('hide');
         // Get form response, redirect to thank you page

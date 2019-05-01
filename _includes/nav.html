@@ -2,7 +2,6 @@
 {%- assign sub_url = include.url | replace: '.html', '' -%}
 {%- if include.lang != 'en' -%}
     {%- capture index -%} /{{ include.lang }}/ {%- endcapture -%} 
-    {%- comment -%}{%- capture resume -%} '/' include.lang '/' resume.html {%- endcapture -%}{%- endcomment -%}
     {%- capture contact -%} /{{ include.lang }}/contact {%- endcapture -%} 
     {% assign sub_url = sub_url | replace: index, '' %}
 {%- else -%}
@@ -10,7 +9,12 @@
   {%- assign contact = '/contact' -%}
   {% assign sub_url = sub_url | remove_first: '/' %}
 {%- endif -%}    
-{%- assign resume = '/resume' -%}
+{%- comment -%} German resume is live {%- endcomment -%}
+{%- if include.lang == 'de' -%}
+      {%- capture resume -%} /{{ include.lang }}/resume {%- endcapture -%}
+{%- else -%}
+  {%- assign resume = '/resume' -%}
+{%- endif -%}
 <nav class="navbar">
     <ul class="container">
       <li><a href="{{ index }}">{{ site.data.i18n[include.lang].nav.home }}</a></li>

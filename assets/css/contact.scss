@@ -1,0 +1,31 @@
+---
+---
+$trans: border-color 300ms;
+
+
+#sender, #msgbox {
+    display: block;
+    border: 1px solid gray;
+    font-family: Roboto Slab, sans-serif;
+
+    &:focus:invalid {
+        border-color: red; 
+        transition: $trans;
+    }
+
+    &:focus:valid {
+        border-color: green;
+        transition: $trans;
+    }
+
+    &:invalid {
+        // Override browser defaults
+        box-shadow: unset;
+        border-color: gray;
+        transition: $trans;
+    }
+}
+
+#sender, #msgbox, button {
+    margin-bottom: .5em;
+}

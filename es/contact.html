@@ -4,16 +4,12 @@ title: Ariel Mordoch | Contacto
 description: Contactame
 lang: es
 custom_js: contact
+custom_css: contact
 ---
 <h1 class="grid-span-cols">contactame</h1>
 <div class="grid-box">
   <h2>por correo electronico</h2>
-  <p>Para defenderme contra el Spam, no voy a dar mi dirección de correo electronico.
-    Si quieres contactarme, por favor completar la captcha y enviar su mensaje.
-    Voy a responder lo antes posible. La seguridad necesitará unos segundos --
-    despues, este texto desaparecerá.
-    <div class="g-recaptcha" data-sitekey="6LdUbGYUAAAAABweMCOU_dfKXnAJgE8G2eQ4Cja_" data-callback="handle_captcha">
-    </div>
+  {% include contact-form.html lang=page.lang %}
 </div>
 <div class="grid-box">
   <h2>por teléfono</h2>

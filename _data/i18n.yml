@@ -13,38 +13,54 @@ en:
     lang_select: "Language"
     copyright_notice: > 
         Copyright &copy; 2018 Ariel Mordoch. Licensed under the
-        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> See link for details.     
-de:
-     nav: 
-         home: "hauptseite"
-         contact: "kontakt"
-         resume: "resume"
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> See link for details.    
 
-     unsupported_browser: >
+    contactlabels:
+        name: name
+        sender: email
+        message: message 
+
+de:
+    nav: 
+        home: "hauptseite"
+        contact: "kontakt"
+        resume: "resume"
+
+    unsupported_browser: >
         Achtung: Dein Webbrowser ist nicht unterstützt. Diese Seite wird falsch funktionieren. Bitte unterladen
         Sie die neuste Version von <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox,</a> 
         <a href="https://www.google.com/chrome/">Chrome,</a> oder <a
         href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge.</a>
 
-     lang_select: "Sprache"
-     copyright_notice: >
+    lang_select: "Sprache"
+    copyright_notice: >
         Copyright &copy; 2018 Ariel Mordoch. Lizenziert unter den
         <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> Sehen Sie den Link für die Hinweise.
-es: 
-     nav: 
-         home: "inicio"
-         contact: "contacto"
-         resume: "curriculum"
+    
+    contactlabels:
+        name: Name
+        sender: Email
+        message: Nachricht 
 
-     unsupported_browser: >
+es: 
+    nav: 
+        home: "inicio"
+        contact: "contacto"
+        resume: "curriculum"
+
+    unsupported_browser: >
         Cuidado: Su navegador de internet es sin apoyo. Este sitio web no funcionara correctamente. Por favor,
         consiga la última versión de <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox,</a> <a
         href="https://www.google.com/chrome/">Chrome,</a> o <a
         href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge.</a>
 
-     lang_select: "Lingua"
-     copyright_notice: >
+    lang_select: "Lingua"
+    copyright_notice: >
         Copyright &copy; 2018 Ariel Mordoch. Autorizaba por el
         <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a> Siga el enlace para los detalles.
 
+    contactlabels:
+        name: nombre
+        sender: dirección de correo electrónico
+        message: mensaje
                         

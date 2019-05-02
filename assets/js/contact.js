@@ -7,7 +7,7 @@ contactForm.addEventListener('submit', function (ev) {
         // Disable error message, if active
         document.querySelector('.error-container').classList.remove('show');
         // Get form response, redirect to thank you page
-        fetch("http://amord-process-captcha.herokuapp.com/", {
+        fetch("https://amord-process-captcha.herokuapp.com/", {
             method: 'POST',
             mode: 'cors',
             body: new FormData(contactForm)

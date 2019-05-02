@@ -8,7 +8,7 @@ document.getElementById('contact-form').addEventListener('submit', function (ev)
         // Disable error message, if active
         document.querySelector('.error-container').classList.remove('show');
         // Disable submit button, change text
-        const PAGE_LANG = document.children[0].lang;
+        const PAGE_LANG = document.childNodes[1].lang;
         const submitButton = document.querySelector('#contact-form button[type="submit"]')
         const initalText = submitButton.innerHTML;
         submitButton.disable = 'true';

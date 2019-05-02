@@ -1,26 +1,39 @@
 ---
 ---
 @import 'colors';
-$trans: border-color 300ms;
 
 
-input, button, textarea {
-    display: block;
-}
-
-%input-style {
+%form-general {
     border: 1px solid gray;
     font-family: 'Roboto Slab', sans-serif;
     margin-bottom: .5em;
 }
 
-button[type="submit"] {
+%input-style {
+    @extend %form-general;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+input, textarea {
     @extend %input-style;
 }
 
-#sender, #msgbox {
+button[type="submit"] {
     @extend %input-style;
+    
+    background: $tech-blue;
+    color: white;
+    font-size: 1em;
+    
+    &:hover, &:active {
+        background-color: scale-color($color: $tech-blue, $saturation: -10%, $lightness: 10%);
+    }
+}
 
+#sender, #msgbox {
+    
+    $trans: border-color 300ms;
     &:focus:invalid {
         border-color: red; 
         transition: $trans;
@@ -55,12 +68,13 @@ $tri-len: 10px;
 // Captcha error box
 .error-container {
     position: absolute;
+    visibility: hidden;
     color: white;
     text-align: center;
     opacity: 0;
     left: 50%;
     transform: translateX(-50%);
-    transition: opacity 100ms;
+    transition: opacity 100ms, visibility 100ms;
     
     .up-arrow {
         margin: 0 auto;
@@ -68,6 +82,7 @@ $tri-len: 10px;
     
     &.show {
         opacity: 1;
+        visibility: visible;
     }
 }
 

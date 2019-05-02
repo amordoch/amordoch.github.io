@@ -26,12 +26,12 @@ button[type="submit"] {
     color: white;
     font-size: 1em;
     
-    &:hover, &:active, &:disabled {
+    &:hover, &:focus, &:active, &:disabled {
         background-color: scale-color($color: $tech-blue, $saturation: -10%, $lightness: 10%);
     }
 
     &:active {
-        box-shadow: -2px -2px 1px scale-color($color: $tech-blue, $saturation: -10%, $lightness: 20%, $alpha: 1.0) inset;
+        box-shadow: -2px -2px 1px scale-color($color: $tech-blue, $saturation: -10%, $lightness: 20%) inset;
     }
 }
 

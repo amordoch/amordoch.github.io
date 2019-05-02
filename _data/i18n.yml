@@ -19,6 +19,9 @@ en:
         name: name
         sender: email
         message: message 
+        error: Please complete the captcha.
+        submit: Submit
+        waittext: please wait...
 
 de:
     nav: 
@@ -41,6 +44,9 @@ de:
         name: Name
         sender: Email
         message: Nachricht 
+        error: Bitte füllen Sie das Captcha aus.
+        submit: abschicken
+        waittext: bitte warten Sie...
 
 es: 
     nav: 
@@ -63,4 +69,6 @@ es:
         name: nombre
         sender: dirección de correo electrónico
         message: mensaje
-                        
+        error: Por favor completa el captcha.
+        submit: enviar
+        waittext: por favor espera...

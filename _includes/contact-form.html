@@ -10,8 +10,8 @@
             data-callback="removeCaptchaMessage"></div>
         <div class="error-container">
             <div class="up-arrow"></div>
-            <div id="captcha-error">Please complete the captcha.</div>
+            <div id="captcha-error">{{ site.data.i18n[include.lang].contactlabels.error }}</div>
         </div>
     </div>
-    <button type="submit">Submit</button>
+    <button type="submit">{{ site.data.i18n[include.lang].contactlabels.submit }}</button>
 </form>

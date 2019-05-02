@@ -1,8 +1,7 @@
 ---
 ---
 // Instead of submitting the form using the usual method, do it with AJAX
-let contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', function (ev) {
+document.getElementById('contact-form').addEventListener('submit', function (ev) {
     ev.preventDefault();
     // ***RESET TO grecaptcha.getResponse() IN PROD***
     if (grecaptcha.getResponse()) {
@@ -21,23 +20,39 @@ contactForm.addEventListener('submit', function (ev) {
             submitButton.innerHTML = '{{ site.data.i18n.es.contactlabels.waittext }}';
         }
         // Get form response, redirect to thank you page
-        fetch("https://amord-process-captcha.herokuapp.com/", {
-            method: 'POST',
-            mode: 'cors',
-            body: new FormData(contactForm)
-        }).then(function(response) {
-            if (response.ok) {
-                if (PAGE_LANG !== 'en') {
-                    window.location.assign('/' + PAGE_LANG + "/thank-you");
+        if (window.fetch) {
+            fetch("https://amord-process-captcha.herokuapp.com/", {
+                method: 'POST',
+                mode: 'cors',
+                body: new FormData(this)
+            }).then(function(response) {
+                if (response.ok) {
+                    if (PAGE_LANG !== 'en') {
+                        window.location.assign('/' + PAGE_LANG + "/thank-you");
+                    } else {
+                        window.location.assign('/thank-you');
+                    }
                 } else {
-                    window.location.assign('/thank-you');
+                    document.querySelector('.error-container').classList.add('show');
+                    submitButton.disable = 'false';
+                    submitButton.innerHTML = initalText;
                 }
-            } else {
-                document.querySelector('.error-container').classList.add('show');
-                submitButton.disable = 'false';
-                submitButton.innerHTML = initalText;
+            });
+        } else {
+            // For legacy browsers, use xhr
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://amord-process-captcha.herokuapp.com");
+            xhr.onreadystatechange = function (ev) {
+                if(this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    if (PAGE_LANG !== 'en') {
+                        window.location.assign('/' + PAGE_LANG + "/thank-you");
+                    } else {
+                        window.location.assign('/thank-you');
+                    }
+                }
             }
-        });
+            xhr.send(new FormData(this));
+        }
     } else {
         // Add captcha error message
         document.querySelector('.error-container').classList.add('show');

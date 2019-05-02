@@ -27,7 +27,11 @@ contactForm.addEventListener('submit', function (ev) {
             body: new FormData(contactForm)
         }).then(function(response) {
             if (response.ok) {
-                window.location.assign("/thank-you");
+                if (PAGE_LANG !== 'en') {
+                    window.location.assign('/' + PAGE_LANG + "/thank-you");
+                } else {
+                    window.location.assign('/thank-you');
+                }
             } else {
                 document.querySelector('.error-container').classList.add('show');
                 submitButton.disable = 'false';

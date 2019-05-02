@@ -1,7 +1,7 @@
 function lang_redirect(lang) {
     if (lang instanceof Event) {
-        lang = this.value;
-        this.form.reset();
+        lang = lang.target.value;
+        document.getElementById('language-select').form.reset();
     }
     // Simply redirect to current page (except for resume) in the given language
     let path = window.location.pathname;

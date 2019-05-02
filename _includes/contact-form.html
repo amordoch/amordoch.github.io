@@ -1,11 +1,17 @@
-<form action="https://example.com" method="post" id="contact-form">
+<form id="contact-form" class="container-col">
     <label for="name">Name</label>
     <input type="text" name="name" id="name" placeholder="Mr. Manager" required>
     <label for="sender">Your Email</label>
     <input type="email" name="sender" id="sender" placeholder="lfavre@bvb.de" required>
     <label for="msgbox">Message</label>
     <textarea name="msgbox" id="msgbox" cols="30" rows="10" required></textarea>
-    <div class="g-recaptcha" data-sitekey="6LdUbGYUAAAAABweMCOU_dfKXnAJgE8G2eQ4Cja_"></div>
-    <span id="captcha-error" class="hide">Please complete the captcha.</span>
+    <div id="captcha-container">
+        <div class="g-recaptcha" data-sitekey="6LdUbGYUAAAAABweMCOU_dfKXnAJgE8G2eQ4Cja_"
+            data-callback="function(t){document.querySelector('error-container').classList.remove('show');}"></div>
+        <div class="error-container">
+            <div class="up-arrow"></div>
+            <div id="captcha-error">Please complete the captcha.</div>
+        </div>
+    </div>
     <button type="submit">Submit</button>
 </form>

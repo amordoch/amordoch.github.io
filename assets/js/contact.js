@@ -2,22 +2,25 @@
 let contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    if (grecaptcha.getResponse() !== "") {
+    // ***RESET TO grecaptcha.getResponse() IN PROD***
+    if (grecaptcha.getResponse()) {
         // Disable error message, if active
-        document.getElementById('captcha-error').classList.add('hide');
+        document.querySelector('.error-container').classList.remove('show');
         // Get form response, redirect to thank you page
-        fetch("https://amord-process-captcha.herokuapp.com", {
+        fetch("http://amord-process-captcha.herokuapp.com/", {
             method: 'POST',
             mode: 'cors',
-            body: FormData(contactForm)
+            body: new FormData(contactForm)
         }).then(function(response) {
             if (response.ok) {
-                window.location = response.url;
+                window.location.assign("/thank-you");
+            } else {
+                document.querySelector('.error-container').classList.add('show');
             }
         });
     } else {
         // Add captcha error message
-        document.getElementById('captcha-error').classList.remove('hide');
+        document.querySelector('.error-container').classList.add('show');
     }
 });
 

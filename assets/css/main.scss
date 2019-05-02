@@ -63,6 +63,12 @@ a {
   align-content: center;
 }
 
+.container-col {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+}
+
 .unsupported-browser {
   display: none;
   font-size: 1.2em;

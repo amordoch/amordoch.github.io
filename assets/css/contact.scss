@@ -3,11 +3,8 @@
 @import 'colors';
 $trans: border-color 300ms;
 
-.g-recaptcha {
-    display: inline-block;
-}
 
-#contact-form:nth-child(1) {
+input, button, textarea {
     display: block;
 }
 
@@ -42,26 +39,41 @@ button[type="submit"] {
     }
 }
 
-#sender, #msgbox, button {
-    margin-bottom: .5em;
+$tri-len: 10px;
+.up-arrow {
+    width: 0;
+    height: 0;
+    border-right: $tri-len solid transparent;
+    border-left: $tri-len solid transparent;
+    border-bottom: $tri-len solid $dark-gray;
 }
 
+#captcha-container {
+    position: relative;
+    margin-bottom: .5em;
+}
 // Captcha error box
-#captcha-error {
-    overflow: show;
-    word-break: keep-all;
+.error-container {
+    position: absolute;
     color: white;
-    background: $dark-gray;
-    max-height: 1.1em;
+    text-align: center;
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 100ms;
     
-    $tri-len: 5px;
-    &::before {
-        // Left pointing arrow, thanks CSS Tricks
-        content: '';
-        width: 0;
-        height: 0;
-        border-right: $dark-gray $tri-len solid;
-        border-top: $tri-len solid transparent;
-        border-bottom: $tri-len solid transparent;
+    .up-arrow {
+        margin: 0 auto;
     }
+    
+    &.show {
+        opacity: 1;
+    }
+}
+
+#captcha-error {
+    background: $dark-gray;
+    border-radius: .5em;
+    font-size: .75em;
+    padding: .2em;
 }

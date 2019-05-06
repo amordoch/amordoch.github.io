@@ -21,9 +21,8 @@ document.getElementById('contact-form').addEventListener('submit', function (ev)
         }
         // Get form response, redirect to thank you page
         if (window.fetch) {
-            fetch("https://amord-process-captcha.herokuapp.com/", {
+            fetch("https://api.arielmordoch.com/", {
                 method: 'POST',
-                mode: 'cors',
                 body: new FormData(this)
             }).then(function(response) {
                 if (response.ok) {
@@ -32,6 +31,9 @@ document.getElementById('contact-form').addEventListener('submit', function (ev)
                     } else {
                         window.location.assign('/thank-you');
                     }
+                } else if (response.status === 500) {
+                    submitButton.innerHTML = 'error occured';
+                    submitButton.disable = 'false';
                 } else {
                     document.querySelector('.error-container').classList.add('show');
                     submitButton.disable = 'false';
@@ -41,7 +43,7 @@ document.getElementById('contact-form').addEventListener('submit', function (ev)
         } else {
             // For legacy browsers, use xhr
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://amord-process-captcha.herokuapp.com");
+            xhr.open("POST", "https://api.arielmordoch.com/");
             xhr.onreadystatechange = function (ev) {
                 if(this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                     if (PAGE_LANG !== 'en') {

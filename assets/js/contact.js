@@ -23,7 +23,6 @@ document.getElementById('contact-form').addEventListener('submit', function (ev)
         if (window.fetch) {
             fetch("https://api.arielmordoch.com/", {
                 method: 'POST',
-                mode: 'cors',
                 body: new FormData(this)
             }).then(function(response) {
                 if (response.ok) {

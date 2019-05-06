@@ -20,7 +20,7 @@ en:
         sender: email
         message: message 
         error: Please complete the captcha.
-        submit: Submit
+        submit: Send Message
         waittext: please wait...
 
 de:

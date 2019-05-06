@@ -11,7 +11,7 @@ document.getElementById('contact-form').addEventListener('submit', function (ev)
         const PAGE_LANG = document.childNodes[1].lang;
         const submitButton = document.querySelector('#contact-form button[type="submit"]')
         const initalText = submitButton.innerHTML;
-        submitButton.disable = true;
+        submitButton.disabled = true;
         if (PAGE_LANG === 'en') {
             submitButton.innerHTML = '{{ site.data.i18n.en.contactlabels.waittext }}';
         } else if (PAGE_LANG === 'de') {
@@ -34,10 +34,10 @@ document.getElementById('contact-form').addEventListener('submit', function (ev)
                     }
                 } else if (response.status === 500) {
                     submitButton.innerHTML = 'error occured';
-                    submitButton.disable = false;
+                    submitButton.disabled = false;
                 } else {
                     document.querySelector('.error-container').classList.add('show');
-                    submitButton.disable = false;
+                    submitButton.disabled = false;
                     submitButton.innerHTML = initalText;
                 }
             });

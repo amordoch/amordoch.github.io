@@ -2,7 +2,7 @@
 <html lang="{{ page.lang }}">
 
 <head>
-  {% include header.html name=page.title descrip=page.description %}
+  {% include header.html name=page.title descrip=page.description no_track=page.no_track %}
   {%- comment -%} load custom stylesheets and js {%- endcomment -%}
   {%- if page.custom_css -%}
     {%- for stylesheet in page.custom_css -%}

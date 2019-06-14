@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
 <link rel="stylesheet" href="/assets/static/flags/css/flag-icon.css">
 <link rel="stylesheet" href="/assets/css/main.css">
+{%- unless include.no_track -%}
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122941823-1"></script>
 <script>
@@ -16,6 +17,7 @@
 
   gtag('config', 'UA-122941823-1');
 </script>
+{%- endunless -%}
 <!-- Overlay script for non-english languages -->
 <script async src="/assets/js/construction_overlay.js"></script>
 <script>

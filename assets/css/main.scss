@@ -349,18 +349,20 @@ html.no-cssgrid {
 
 /* Reduce font size, transition from grid to column on small devices */
 
-@media all and (max-width: 980px), (-webkit-min-device-pixel-raito: 2) {
+@media all and (max-width: 1300px), (-webkit-min-device-pixel-raito: 2) {
   /* In essence, changes nothing, but allows sticky footer */
   body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: black;
   }
   footer {
     margin-top: auto;
+    color: white;
   }
   main {
-    background-position: top;
+    background: $bg-gray;
     flex-grow: 1;
   }
   .content {
@@ -370,15 +372,14 @@ html.no-cssgrid {
   }
   .grid-box {
     margin-bottom: 1em;
+    background: initial;
+    border: unset;
+    box-shadow: unset;
   }
   .navbar {
     font-size: 1.5em;
   }
   .grid-span-cols {
     align-self: center;
-  }
-
-  .content h3 {
-    margin-top: auto;
   }
 }

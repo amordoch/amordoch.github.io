@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ page.lang }}">
 
 <head>
-  {% include header.html name=page.title %}
+  {% include header.html name=page.title descrip=page.description no_track=page.no_track %}
   {%- comment -%} load custom stylesheets and js {%- endcomment -%}
   {%- if page.custom_css -%}
     {%- for stylesheet in page.custom_css -%}
@@ -16,7 +16,7 @@
     <div class="unsupported-browser">
       <p><strong>{{ site.data.i18n[page.lang].unsupported_browser }}</strong></p>
     </div>
-    {% include nav.html lang=page.lang %}
+    {% include nav.html lang=page.lang url=page.url %}
   </header>
   <main>
     <div class="content">

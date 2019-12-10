@@ -1,10 +1,18 @@
 <p>{{ site.data.i18n[include.lang].copyright_notice }}</p>
 <form>
     <label for="language-select">{{ site.data.i18n[include.lang].lang_select }}: </label>
-    <select id="language-select" oninput="lang_redirect(event);">
+    <select id="language-select" onchange="lang_redirect(event);">
         <option value="en" selected>English (en-US)</option>
         <option value="he">עברית (he-IL)</option>
         <option value="de">Deutsch (de-DE)</option>
         <option value="es">Español (es-ES)</option>
     </select>
 </form>
+<script>
+    let lang_select = document.getElementById('language-select');
+    for (i = 0; i < lang_select.childElementCount; i++) {
+        if (lang_select[i].value === "{{ include.lang }}") {
+            lang_select[i].selected = true;
+        }
+    }
+</script>

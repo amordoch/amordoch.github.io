@@ -17,12 +17,6 @@ footer {
   background: #b2af96;
 }
 
-.container-col {
-  display: flex;
-  flex-direction: column;
-  flex: auto;
-}
-
 .indent1 {
   margin-left: 1em;
 }
@@ -67,7 +61,7 @@ footer {
     color: #000;
     opacity: .5;
 
-    &:hover, &:focus {
+    &:hover {
       opacity: 1;
       transform: scale(.95);
       transition: transform 100ms linear;
@@ -155,13 +149,13 @@ footer {
   color: white;
 }
 
-@media (max-width: 10in) and (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 1.5) {
+@media (max-width: 1100px), (-webkit-min-device-pixel-ratio: 2) {
   #skills {
     display: block;
   }
 }
 
-@media all and (max-width: 7in) and (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 1.5) {
+@media all and (max-width: 980px), (-webkit-min-device-pixel-ratio: 2) {
 
   body {
     height: unset;

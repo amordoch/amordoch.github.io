@@ -1,20 +1,18 @@
 ---
 layout: template-en
 title: Ariel Mordoch | Kontakt
+description: Kontakten Sie mich
 lang: de
 custom_js: contact
+custom_css: contact
 ---
 <h1 class="grid-span-cols">kontakt</h1>
 <div class="grid-box">
   <h2>email</h2>
-  <p>Um mich von Spam-mail zu verteidigen, werde ich meine Emailaddresse nicht abgeben.
-    Wenn Sie mich kontaktieren möchten, überprüfen Sie sich mal herunter, schicken Sie
-    deine Nachricht, und ich werde Sie so bald wie möglich kontaktieren</p>
-  <div class="g-recaptcha" data-sitekey="6LdUbGYUAAAAABweMCOU_dfKXnAJgE8G2eQ4Cja_" data-callback="handle_captcha">
-  </div>
+  {% include contact-form.html lang=page.lang %}
 </div>
 <div class="grid-box">
-  <h2>telefonnummer</h2>
+  <h2>telefon</h2>
   <p>Sie können mich an <a href="tel:+14045934361">+1 404-593-4361.</a> erreichen.</p>
 </div>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>

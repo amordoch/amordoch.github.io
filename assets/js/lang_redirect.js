@@ -5,15 +5,16 @@ function lang_redirect(lang) {
     }
     // Simply redirect to current page (except for resume) in the given language
     let path = window.location.pathname;
+    const PAGE_LANG = document.childNodes[1].lang;
     if (lang === 'en') {
-        window.location = window.location.href.replace('/de/', '/').replace('/es/', '/');
-    } else if (lang === 'he' || path.includes('resume')) {
-        add_lang_overlay('', lang);
-    } else if (!path.includes('/' + lang + '/')) {
-        if (path.includes('/de/') || path.includes('/es/')) {
-            window.location = window.location.href.replace('/de/', '/' + lang + '/').replace('/es/', '/' + lang + '/');
+        window.location.assign(path.replace('/' + PAGE_LANG + '/', '/'));
+    } else if (lang === 'he' || (lang === 'es' && path.includes('resume'))) {
+        add_lang_overlay(null, lang);
+    } else if (lang !== PAGE_LANG) {
+        if (PAGE_LANG !== 'en') {
+            window.location.assign(path.replace('/' + PAGE_LANG + '/', '/' + lang + '/'));
         } else {
-            window.location = window.location.origin + '/' + lang + path;
+            window.location.assign('/' + lang + path);
         }
     } 
 }

@@ -1,0 +1,17 @@
+<form id="contact-form" class="container-col">
+    <label for="name">{{ site.data.i18n[include.lang].contactlabels.name }}</label>
+    <input type="text" name="name" id="name" placeholder="Mr. Manager" required>
+    <label for="sender">{{ site.data.i18n[include.lang].contactlabels.sender }}</label>
+    <input type="email" name="sender" id="sender" placeholder="lfavre@bvb.de" required>
+    <label for="msgbox">{{ site.data.i18n[include.lang].contactlabels.message }}</label>
+    <textarea name="msgbox" id="msgbox" cols="30" rows="10" required></textarea>
+    <div id="captcha-container">
+        <div class="g-recaptcha" data-sitekey="6LdUbGYUAAAAABweMCOU_dfKXnAJgE8G2eQ4Cja_"
+            data-callback="removeCaptchaMessage"></div>
+        <div class="error-container">
+            <div class="up-arrow"></div>
+            <div id="captcha-error">{{ site.data.i18n[include.lang].contactlabels.error }}</div>
+        </div>
+    </div>
+    <button type="submit">{{ site.data.i18n[include.lang].contactlabels.submit }}</button>
+</form>

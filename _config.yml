@@ -18,13 +18,14 @@ email: arielmordoch@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   The personal website of Ariel Mordoch.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://arielmordoch.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.arielmordoch.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  amordoch
 
 
 # Build settings
 markdown: kramdown
 plugins:
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

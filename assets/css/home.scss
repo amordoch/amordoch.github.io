@@ -1,12 +1,5 @@
 ---
 ---
-/* Specific content pane styling for homepage */
-/*
-.hobbies ul {
-  list-style-position: inside;
-  padding-left: 0;
-}
-*/
 @import 'colors';
 
 body {
@@ -43,7 +36,7 @@ main {
   a {
     color: white;
   }
-  width: 100vw;
+  width: 100%;
 }
 
 .nav-bottom-shadow {
@@ -59,5 +52,32 @@ main {
     text-align: center;
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
+  }
+}
+
+@media all and (max-width: 1300px), (-webkit-min-device-pixel-raito: 2) {
+  .navbar {
+    position: initial;
+    background: black;
+  }
+
+  .content {
+    row-gap: 2vh;
+    & > div {
+      margin: auto;
+    }
+    h2 {
+      margin: auto;
+      border-bottom: 2px solid black;
+    }
+  }
+
+  #title {
+    align-self: normal;
+    margin: 0;
+  }
+
+  section {
+    border-left: none;
   }
 }

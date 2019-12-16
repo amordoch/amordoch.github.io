@@ -20,27 +20,38 @@ main {
 
 #title {
   justify-self: normal;
-  background-color: #111;
+  color: white;
   // Flex to center
   display: flex;
   h1 {
     margin: auto; // center
   }
-  color: white;
+  // Tint photo a bit to make text clearer
+  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.25)),
+    center/cover url("../static/DSC_0947.png") no-repeat,
+    #111;
+}
+
+@keyframes bg-fade-in {
+  0% {
+    background-color: #111;
+  }
+  100% {
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.25)),
+    center/cover url("../static/DSC_0947.png") no-repeat;
+  }
 }
 
 .navbar {
+  // Don't count navbar in page height
   background: none;
   position: absolute;
   top: 0;
+  z-index: 1;
   a {
     color: white;
   }
   width: 100%;
-}
-
-.nav-bottom-shadow {
-  box-shadow: 0 -2px white inset;
 }
 
 .content {

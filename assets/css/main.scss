@@ -27,9 +27,18 @@ h1, h2, h3 {
 }
 
 main {
-  background: #111;
+  background: #f5f5f5;
   padding-bottom: 1em;
-  color: white;
+  color: black;
+}
+
+section {
+  padding-left: 1em;
+  margin-right: 10%;
+  border-left: 2px solid black;
+  :nth-child(1) {
+    margin-top: 0;
+  }
 }
 
 footer {
@@ -57,6 +66,19 @@ a {
 
 }
 
+#title {
+  justify-self: normal;
+  color: white;
+  // Flex to center
+  display: flex;
+  h1 {
+    margin: auto; // center
+  }
+  // Tint photo a bit to make text clearer
+  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.25)),
+    center/cover url("../static/DSC_0947.png") no-repeat,
+    #111;
+}
 
 .container {
   display: flex;
@@ -137,9 +159,12 @@ html.no-cssgrid {
 }
 
 .navbar {
-  background-color: $buzz-gold;
   font-family: 'Lato', sans-serif;
   font-size: 1.1em;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
   padding: 0 1vw;
 
   ul {
@@ -150,7 +175,7 @@ html.no-cssgrid {
   
   a {
     text-decoration: none;
-    color: black;
+    color: white;
   }
   
   ul li {
@@ -283,21 +308,12 @@ html.no-cssgrid {
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-column-gap: 36vw;
-  margin: 0 1em;
-  grid-row-gap: 5vh;
-}
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 100vh auto;
+  column-gap: 0;
+  margin: 0 auto;
+  row-gap: 5vh;
 
-/* For blocks of content */
-
-.grid-span-cols {
-  grid-column: 1 / -1;
-  justify-self: center;
-}
-
-.content {
   h1 {
     font-size: 3em;
     margin-top: .5em;
@@ -306,23 +322,22 @@ html.no-cssgrid {
 
   h2 {
     font-size: 1.7em;
-    margin-top: auto;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    margin: 0 auto;
   }
   
   h3 {
     margin-top: -4vh;
   }
+
 }
 
+/* For blocks of content */
 
-.grid-box {
-  background: rgba(255, 255, 255, 0.4);
-  border: rgba(0, 0, 0, 0.2) 1px solid;
-  border-radius: .5em;
-  padding-left: 2%;
-  padding-right: 2%;
-  color: black;
-  box-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
+.grid-span-cols {
+  grid-column: 1 / -1;
+  justify-self: center;
 }
 
 /* For construction notification */
@@ -342,7 +357,8 @@ html.no-cssgrid {
   z-index: 9999999;
   height: 100%;
   width: 100%;
-  background: black;
+  background: #111;
+  color: white;
   text-align: center;
   padding-top: 10%;
   font-size: 2em;
@@ -359,28 +375,44 @@ html.no-cssgrid {
     min-height: 100vh;
     color: black;
   }
+
   footer {
     margin-top: auto;
     color: white;
   }
+
   main {
     background: $bg-gray;
     flex-grow: 1;
   }
+
+  section {
+    border-left: none;
+  }
+
+  #title {
+    margin: 0;
+    align-self: normal;
+  }
+
   .content {
     font-size: .8em;
     display: flex;
     flex-direction: column;
+    row-gap: 2vh;
+
+    h2 {
+      margin: auto;
+      border-bottom: 2px solid black;
+    }
   }
-  .grid-box {
-    margin-bottom: 1em;
-    background: initial;
-    border: unset;
-    box-shadow: unset;
-  }
+
   .navbar {
     font-size: 1.5em;
+    position: initial;
+    background: black;
   }
+
   .grid-span-cols {
     align-self: center;
   }

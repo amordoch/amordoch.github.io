@@ -22,16 +22,16 @@ input, textarea {
 button[type="submit"] {
     @extend %input-style;
     
-    background: $tech-blue;
+    background: #111;
     color: white;
     font-size: 1em;
     
     &:hover, &:focus, &:active, &:disabled {
-        background-color: scale-color($color: $tech-blue, $saturation: -10%, $lightness: 10%);
+        background-color: scale-color($color: #111, $saturation: -15%, $lightness: 15%);
     }
 
     &:active {
-        box-shadow: -2px -2px 1px scale-color($color: $tech-blue, $saturation: -10%, $lightness: 20%) inset;
+        box-shadow: -2px -2px 1px scale-color($color: #111, $saturation: -15%, $lightness: 20%) inset;
     }
 }
 
@@ -56,6 +56,10 @@ button[type="submit"] {
     }
 }
 
+.content {
+    grid-template-rows: 65vh auto;
+}
+
 $tri-len: 10px;
 .up-arrow {
     width: 0;
@@ -68,6 +72,7 @@ $tri-len: 10px;
 #captcha-container {
     position: relative;
     margin-bottom: .5em;
+    margin-right: auto;
 }
 // Captcha error box
 .error-container {

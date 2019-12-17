@@ -1,5 +1,5 @@
----
----
+--- 
+--- 
 @import 'colors';
 // General
 
@@ -22,7 +22,9 @@ body {
   // background-color: black;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'PT Serif', sans-serif;
 }
 
@@ -36,6 +38,7 @@ section {
   padding-left: 1em;
   margin-right: 10%;
   border-left: 2px solid black;
+
   :nth-child(1) {
     margin-top: 0;
   }
@@ -47,11 +50,13 @@ footer {
   background: black;
   color: white;
 
-  a, a:visited {
+  a,
+  a:visited {
     color: inherit;
   }
 
-  form, p {
+  form,
+  p {
     display: inline-block;
   }
 }
@@ -59,8 +64,9 @@ footer {
 
 a {
   color: $link-blue;
-  
-  &:hover, &:focus {
+
+  &:hover,
+  &:focus {
     color: #1879DB;
   }
 
@@ -71,13 +77,15 @@ a {
   color: white;
   // Flex to center
   display: flex;
+
   h1 {
     margin: auto; // center
   }
+
   // Tint photo a bit to make text clearer
-  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.25)),
-    center/cover url("../static/DSC_0947.png") no-repeat,
-    #111;
+  background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .25)),
+  center/cover url("../static/DSC_0947.png") no-repeat,
+  #111;
 }
 
 .container {
@@ -102,55 +110,6 @@ a {
   background-image: linear-gradient(#f7f7f7, #eaeaea);
 }
 
-/*** NO GRID ***/
-/* General fix for buggy IE flexbox */
-html.no-cssgrid {
-    display: flex;
-    flex-direction: column;
-}
-
-.no-cssgrid {
-
-  body {
-    /* In essence, changes nothing, but allows sticky footer */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  header {
-    padding-left: 0;
-  }
-
-  main {
-    flex-grow: 1;
-  }
-
-  .unsupported-browser {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .grid-box {
-    margin-bottom: 1em;
-  }
-
-  .grid-span-cols {
-    align-self: center;
-  }
-
-  .content h3 {
-    margin-top: auto;
-  }
-
-}
-
 /*** NAV ***/
 
 @mixin nav-shadow {
@@ -172,17 +131,17 @@ html.no-cssgrid {
     padding: 0 0;
     margin: 0 0;
   }
-  
+
   a {
     text-decoration: none;
     color: white;
   }
-  
+
   ul li {
     padding: 5px;
     position: relative;
   }
-  
+
   // Split up focus-within's so that nav menu still works in Edge
   // Gotta use mixin's though, so SASS doesn't group the selectors
   li:hover {
@@ -192,7 +151,7 @@ html.no-cssgrid {
   li:focus-within {
     @include nav-shadow;
   }
-  
+
   img {
     max-height: 1em;
   }
@@ -207,7 +166,8 @@ html.no-cssgrid {
   margin-left: auto;
 }
 
-#github-li:hover, #linkedin:hover {
+#github-li:hover,
+#linkedin:hover {
   background-color: inherit;
 }
 
@@ -216,11 +176,11 @@ html.no-cssgrid {
 .dropdown {
   /* Set all dropdown properties now, take it out of document flow with position: absolute; and hide it with visibility
   as we cannot animate it if display is set to none */
-  
+
   img {
     padding: 0 .2em;
   }
-  
+
   ul {
     /* account for .navbar ul li margin */
     margin: 5px auto;
@@ -236,24 +196,24 @@ html.no-cssgrid {
     animation: drop-out .25s;
     z-index: 999;
   }
-  
+
   @mixin color-change {
     background-color: $buzz-gold-60;
     box-shadow: unset;
   }
 
   li:hover {
-    @include color-change;    
+    @include color-change;
   }
 
   li:focus-within {
     @include color-change;
   }
-  
+
   ul li {
     padding: 2px 0;
   }
-  
+
   /* And here is the actual magic */
 
   @mixin drop-in {
@@ -261,12 +221,13 @@ html.no-cssgrid {
     animation-fill-mode: forwards;
     overflow: visible;
   }
-  
-  &:hover>ul, &>ul:hover {
+
+  &:hover>ul,
+  &>ul:hover {
     @include drop-in;
   }
 
-  &:focus-within > ul {
+  &:focus-within>ul {
     @include drop-in;
   }
 
@@ -279,6 +240,7 @@ html.no-cssgrid {
     left: 0;
     opacity: 0;
   }
+
   100% {
     left: 0;
     transform: scaleY(1);
@@ -294,11 +256,13 @@ html.no-cssgrid {
     left: 0;
     transform: scaleY(1);
   }
+
   99.9999% {
     opacity: 0;
     transform: scaleY(0);
     left: 0;
   }
+
   100% {
     left: -9999vw;
   }
@@ -326,7 +290,7 @@ html.no-cssgrid {
     font-weight: 300;
     margin: 0 auto;
   }
-  
+
   h3 {
     margin-top: -4vh;
   }
@@ -366,8 +330,8 @@ html.no-cssgrid {
 }
 
 /* Reduce font size, transition from grid to column on small devices */
+@mixin flex-layout {
 
-@media all and (max-width: 1300px), (-webkit-min-device-pixel-raito: 2) {
   /* In essence, changes nothing, but allows sticky footer */
   body {
     display: flex;
@@ -415,5 +379,27 @@ html.no-cssgrid {
 
   .grid-span-cols {
     align-self: center;
+  }
+}
+
+@media all and (max-width: 1300px),
+(-webkit-min-device-pixel-raito: 2) {
+  @include flex-layout();
+}
+
+/*** NO GRID ***/
+/* General fix for buggy IE flexbox */
+html.no-cssgrid {
+  display: flex;
+  flex-direction: column;
+}
+
+.no-cssgrid {
+  @include flex-layout();
+
+  .unsupported-browser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

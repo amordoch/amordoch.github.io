@@ -20,3 +20,9 @@
     border-bottom: 1px solid black;
   }
 }
+
+@media all and (max-width: 1300px), (-webkit-min-device-pixel-raito: 2) {
+  #skills {
+    display: block;
+  }
+}

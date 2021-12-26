@@ -8,12 +8,13 @@
 
 .content {
   grid-template-rows: 65vh auto;
+  grid-template-columns: .7fr 2fr;
 }
 
 #skills {
   display: grid;
   grid-template: auto / repeat(3, 1fr);
-  grid-gap: 5%;
+  column-gap: max(2vw, 25px); // don't use % or div's will overflow to next section
 
   h4 {
     font-size: 1em;
@@ -21,8 +22,17 @@
   }
 }
 
+.daterange {
+  float: right;
+}
+
 @media all and (max-width: 1300px), (-webkit-min-device-pixel-raito: 2) {
   #skills {
+    display: block;
+  }
+
+  .daterange {
+    float: initial;
     display: block;
   }
 }

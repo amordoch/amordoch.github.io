@@ -33,6 +33,10 @@
 
   .daterange {
     float: initial;
-    display: block;
+
+    &::before {
+      content: "| ";
+      font-style: normal;
+    }
   }
 }

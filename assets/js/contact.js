@@ -5,11 +5,10 @@
  * Captcha callback; remove if successful, replace with email returned by
  * "backend." 
  */
-function removeCaptchaMessage() {
+function handleCaptcha(captchaResponse) {
     // ***RESET TO grecaptcha.getResponse() IN PROD***
     const APP_URL = "https://amord-process-captcha.onrender.com/";
-    let captcha = grecaptcha.getResponse();
-    if (captcha) {
+    if (captchaResponse) {
         // Disable error message, if active
         document.querySelector('.error-container').classList.remove('show');
         // Disable submit button, change text
@@ -28,18 +27,22 @@ function removeCaptchaMessage() {
             fetch(APP_URL, {
                 method: 'POST',
                 mode: 'cors',
-                body: {'g-recaptcha-response': captcha}
-            }).then(function (response) {
-                if (response.ok) {
-                    contactPara.textContent = response.json['email'] + " | " + response.json['phone']
-                    document.getElementById('g-recaptcha').setAttribute('display', 'none');
-                } else if (response.status === 500) {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({'g-recaptcha-response': captchaResponse})
+            }).then((response) => {
+                if (response.status === 500) {
                     contactPara.textContent = 'error occured';
-                } else {
+                } else if (!response.ok) {
                     document.querySelector('.error-container').classList.add('show');
-                    contactPara.disabled = false;
                     contactPara.textContent = initalText;
                 }
+                return response;
+            }).then((response) => response.json())
+            .then((data) => {
+                contactPara.textContent = data['email'] + " | " + data['phone'];
+                document.getElementById('captcha-container').classList.add('hide');
             });
         }
     } else {

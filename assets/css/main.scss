@@ -289,13 +289,9 @@ a {
     font-size: 1.7em;
     font-family: 'Roboto Slab', serif;
     font-weight: 300;
-    margin: 0 auto;
+    justify-self: end;
+    margin: 0 3% auto;
   }
-
-  h3 {
-    margin-top: -4vh;
-  }
-
 }
 
 /* For blocks of content */

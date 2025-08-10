@@ -6,3 +6,10 @@ for (let a of nav_as) {
     a.parentElement.classList.add('nav-bottom-shadow');
   }
 }
+
+const hint = document.querySelector('#scroll-hint');
+if (hint) {
+  window.addEventListener('scroll', () => {
+    hint.style.opacity = 1 - Math.min(window.scrollY / window.innerHeight, 1);
+  });
+}

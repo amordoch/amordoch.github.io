@@ -174,8 +174,6 @@ a {
 /** DROPDOWN **/
 
 .dropdown {
-  /* Set all dropdown properties now, take it out of document flow with position: absolute; and hide it with visibility
-  as we cannot animate it if display is set to none */
 
   img {
     padding: 0 .2em;
@@ -188,16 +186,15 @@ a {
     transform: scaleY(0);
     transform-origin: top;
     position: absolute;
-    left: -9999vw;
+    left: 0;
     opacity: 0;
+    transition: opacity .25s, transform .25s;
     // frosted glass effect
     background-color: rgba($color: #fff, $alpha: .2);
     backdrop-filter: blur(20px);
     box-shadow: 0 1px 5px rgba(0, 0, 0, .25);
     text-align: center;
     min-width: 100%;
-    animation: drop-out .25s;
-    z-index: 999;
   }
 
   @mixin color-change {
@@ -217,58 +214,19 @@ a {
     padding: 2px 0;
   }
 
-  /* And here is the actual magic */
-
-  @mixin drop-in {
-    animation: drop-in .25s;
-    animation-fill-mode: forwards;
+  &:hover>ul,
+  &>ul:hover {
+    transform: scaleY(1);
+    opacity: 1;
     overflow: visible;
   }
 
-  &:hover>ul,
-  &>ul:hover {
-    @include drop-in;
-  }
-
   &:focus-within>ul {
-    @include drop-in;
-  }
-
-}
-
-/* drop in by secretly moving to the left, then only animating opacity  */
-
-@keyframes drop-in {
-  0% {
-    left: 0;
-    opacity: 0;
-  }
-
-  100% {
-    left: 0;
     transform: scaleY(1);
     opacity: 1;
-  }
-}
-
-/* Drop out by animating opacity, then secretly moving to the left */
-
-@keyframes drop-out {
-  0% {
-    opacity: 1;
-    left: 0;
-    transform: scaleY(1);
+    overflow: visible;
   }
 
-  99.9999% {
-    opacity: 0;
-    transform: scaleY(0);
-    left: 0;
-  }
-
-  100% {
-    left: -9999vw;
-  }
 }
 
 /*** CONTENT ***/

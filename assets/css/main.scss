@@ -214,14 +214,7 @@ a {
     padding: 2px 0;
   }
 
-  &:hover>ul,
-  &>ul:hover {
-    transform: scaleY(1);
-    opacity: 1;
-    overflow: visible;
-  }
-
-  &:focus-within>ul {
+  &:hover>ul, &>ul:hover, &:focus-within>ul {
     transform: scaleY(1);
     opacity: 1;
     overflow: visible;

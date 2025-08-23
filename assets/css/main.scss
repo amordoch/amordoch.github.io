@@ -179,22 +179,27 @@ a {
     padding: 0 .2em;
   }
 
-  ul {
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  ul[popover] {
     /* account for .navbar ul li margin */
-    margin: 5px auto;
+    // margin: 5px auto;
     display: block;
     transform: scaleY(0);
     transform-origin: top;
-    position: absolute;
-    left: 0;
     opacity: 0;
-    transition: opacity .25s, transform .25s;
+    transition: opacity .25s, transform .25s allow-discrete;
     // frosted glass effect
     background-color: rgba($color: #fff, $alpha: .2);
     backdrop-filter: blur(20px);
     box-shadow: 0 1px 5px rgba(0, 0, 0, .25);
     text-align: center;
-    min-width: 100%;
+    border: 0;
   }
 
   @mixin color-change {
@@ -214,10 +219,14 @@ a {
     padding: 2px 0;
   }
 
-  &:hover>ul, &>ul:hover, &:focus-within>ul {
+  ul[popover]:popover-open {
+    // position is set using JS; Firefox doesn't support anchor positioning
     transform: scaleY(1);
+    transform-origin: top;
     opacity: 1;
     overflow: visible;
+    border: 0;
+    inset: 0;
   }
 
 }

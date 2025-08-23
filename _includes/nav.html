@@ -21,8 +21,10 @@
     <li><a href="{{ resume }}">{{ site.data.i18n[include.lang].nav.resume }}</a></li>
     <li><a href="{{ contact }}">{{ site.data.i18n[include.lang].nav.contact }}</a></li>
     <li class="dropdown">
-      <img src="/assets/static/lang-icon.png" alt="Languages">
-      <ul>
+      <button aria-haspopup="listbox" popovertarget="lang-menu">
+        <img src="/assets/static/lang-icon.png" alt="Languages">
+      </button>
+      <ul id="lang-menu" popover>
         <li><a href="/{{ sub_url }}"><span class="flag-icon flag-icon-us"></span></a></li>
         <li><a href="#he" onclick="add_lang_overlay(event, 'he');"><span class="flag-icon flag-icon-il"></span></a>
         </li>

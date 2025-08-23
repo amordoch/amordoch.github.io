@@ -346,12 +346,6 @@ a {
 @media all and (max-width: 1300px),
 (-webkit-min-device-pixel-raito: 2) {
   @include flex-layout();
-
-  #nav-dropdown-hint {
-    display: initial;
-    color: white;
-  }
-
 }
 
 /*** NO GRID ***/
